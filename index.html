@@ -1340,6 +1340,279 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
+    /* ============================================================
+       RESPONSIVE DESIGN SYSTEM (ALL PHONES & TABLETS)
+       ============================================================ */
+
+    /* ---------- Tablets & Medium Screens (max-width: 1024px) ---------- */
+    @media (max-width: 1024px) {
+      .wrap {
+        padding: 0 24px;
+      }
+
+      .about .wrap {
+        gap: 48px;
+      }
+
+      .about-img-col img {
+        height: 440px;
+      }
+
+      .manifest .wrap {
+        padding-top: 20px;
+      }
+    }
+
+    /* ---------- Small Tablets & Mobile Landscape (max-width: 768px) ---------- */
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .topbar .wrap {
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+        font-size: 11px;
+      }
+
+      .topbar .tags {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      /* Hero Section Mobile */
+      .hero {
+        padding: 60px 0 0 0;
+      }
+
+      .hero .wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding-bottom: 36px;
+        text-align: center;
+      }
+
+      .hero .eyebrow {
+        justify-content: center;
+      }
+
+      .hero p.lead {
+        margin: 0 auto 24px;
+      }
+
+      .hero-ctas {
+        justify-content: center;
+        width: 100%;
+      }
+
+      .hero-art {
+        height: 280px;
+      }
+
+      /* About Section Mobile */
+      .about .wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .about-img-col img {
+        height: 340px;
+      }
+
+      .about-img-badge {
+        bottom: 12px;
+        right: 12px;
+        padding: 16px 20px;
+        border-radius: 12px;
+      }
+
+      .about-img-badge .big-num {
+        font-size: 40px;
+      }
+
+      .about-img-badge .big-label {
+        font-size: 11px;
+      }
+
+      .about-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 24px 0;
+      }
+
+      .about-stat-item {
+        padding: 16px 10px;
+        text-align: center;
+      }
+
+      .about-stat-item .num {
+        font-size: 26px;
+      }
+
+      .about-stat-item .lbl {
+        font-size: 10.5px;
+      }
+
+      /* Rice Range Mobile Scroll Pills */
+      .rice-pills {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding: 4px 10px 12px;
+        margin-bottom: 24px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+
+      .rice-pills::-webkit-scrollbar {
+        display: none;
+      }
+
+      .rice-pills .pill {
+        flex-shrink: 0;
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 8px 20px;
+      }
+
+      /* Carousel & Arrows Mobile */
+      .rice-carousel-wrapper {
+        padding: 0 4px;
+      }
+
+      .carousel-track {
+        padding: 10px 12px 20px;
+        gap: 16px;
+      }
+
+      .rice-card {
+        width: 270px;
+      }
+
+      .rice-img-box {
+        height: 190px;
+      }
+
+      .carousel-arrow.prev {
+        left: 2px;
+      }
+
+      .carousel-arrow.next {
+        right: 2px;
+      }
+
+      /* Contact Form Mobile */
+      .contact .wrap {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    /* ---------- Small Smartphones / Extra Small Mobile (max-width: 480px) ---------- */
+    @media (max-width: 480px) {
+      .wrap {
+        padding: 0 16px;
+      }
+
+      /* Header Logo & Buttons */
+      .top-logo {
+        height: 48px;
+        max-width: 170px;
+      }
+
+      .private-label-btn {
+        padding: 4px 12px 4px 4px;
+        font-size: 12px;
+      }
+
+      .private-label-btn .btn-arrow-badge {
+        width: 26px;
+        height: 26px;
+      }
+
+      /* Hero Title & CTAs */
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .hero-ctas {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero-ctas .cta-btn {
+        width: 100%;
+      }
+
+      /* Stats 2-column or 1-column */
+      .about-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .about-stat-item {
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 18px;
+      }
+
+      .about-stat-item .lbl {
+        margin-top: 0;
+      }
+
+      /* Cards full viewport width fitting */
+      .rice-card {
+        width: calc(100vw - 56px);
+        max-width: 280px;
+      }
+
+      .carousel-arrow {
+        width: 40px;
+        height: 40px;
+      }
+
+      .carousel-arrow svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Forms */
+      form .cta-btn {
+        width: 100%;
+      }
+
+      /* Floating WhatsApp Mobile Position */
+      .whatsapp-float {
+        bottom: 16px;
+        left: 16px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .whatsapp-float svg {
+        width: 26px;
+        height: 26px;
+      }
+    }
+
+    /* ---------- Tiny Mobile Screens (max-width: 360px) ---------- */
+    @media (max-width: 360px) {
+      .hero h1 {
+        font-size: 28px;
+      }
+
+      .about-img-col img {
+        height: 260px;
+      }
+
+      .rice-card {
+        width: calc(100vw - 44px);
+      }
+    }
+
     ::selection {
       background: var(--gold);
       color: var(--forest-deep);
