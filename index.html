@@ -75,6 +75,20 @@
       letter-spacing: -0.01em;
     }
 
+    .foot-bottom {
+      position: relative;
+    }
+
+    .foot-bottom .wrap {
+      padding-right: 130px;
+    }
+
+    .foot-top-btn {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
+    }
+
     .eyebrow {
       font-family: 'JetBrains Mono', monospace;
       font-size: 12px;
@@ -1340,6 +1354,44 @@
       background: rgba(255, 255, 255, 0.1);
     }
 
+    .foot-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
+      padding-top: 24px;
+      padding-bottom: 10px;
+      font-size: 13px;
+      color: #A3958F;
+    }
+
+    .foot-bottom .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 0;
+    }
+
+    .foot-bottom a {
+      color: var(--gold-light);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .foot-bottom a:hover {
+      color: #FFFFFF;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .foot-bottom .wrap {
+        flex-direction: column;
+        text-align: center;
+        gap: 6px;
+      }
+    }
+
     /* ============================================================
        RESPONSIVE DESIGN SYSTEM (ALL PHONES & TABLETS)
        ============================================================ */
@@ -2310,6 +2362,15 @@
           <path d="M12 19V5M5 12l7-7 7 7" />
         </svg>
       </a>
+
+      <!-- Footer Bottom Credit Bar -->
+      <div class="foot-bottom">
+        <div class="wrap">
+          <p>© 2026 Sri Kumaran Enterprises. All rights reserved.</p>
+          <p class="credit">Designed &amp; Developed with <span style="color:#E05252; font-size:15px;">&#10084;</span>
+            by <a href="https://www.buildnexdev.in/" target="_blank" rel="noopener">BUILDNEXDEV</a></p>
+        </div>
+      </div>
     </div>
   </footer>
 
