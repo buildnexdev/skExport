@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sri Kumaran Enterprises — Premium Indian Rice Exporter</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --forest: #163C2C;
+      --forest-deep: #0E2A1F;
+      --forest-mid: #2D6B4A;
+      --gold: #C89B3C;
+      --gold-light: #E9CC85;
+      --cream: #FAF6EC;
+      --paper: #FFFFFF;
+      --ink: #1D2A22;
+      --ink-soft: #5C6B60;
+      --line: #DCD4BE;
+      --shadow: 0 20px 50px -25px rgba(14, 42, 31, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Work Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      color: var(--forest-deep);
+      letter-spacing: -0.01em;
+    }
+
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 22px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    section {
+      padding: 96px 0;
+    }
+
+    @media(max-width:720px) {
+      section {
+        padding: 64px 0;
+      }
+
+      .wrap {
+        padding: 0 20px;
+      }
+    }
+
+    /* ---------- Topbar ---------- */
+    .topbar {
+      background: var(--forest-deep);
+      color: #D9E4DA;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+    }
+
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .topbar span {
+      opacity: 0.8;
+    }
+
+    .topbar .tags {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: #FFFFFF;
+      border-bottom: 1px solid #EAE5D9;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+    }
+
+    .brand-logo-link {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .top-logo {
+      height: 64px;
+      width: auto;
+      max-width: 240px;
+      object-fit: contain;
+    }
+
+    nav.links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    nav.links a {
+      font-size: 12.5px;
+      font-weight: 600;
+      letter-spacing: 0.07em;
+      color: #2B2B2B;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 6px 0;
+      display: inline-flex;
+      align-items: center;
+      transition: color .2s;
+    }
+
+    nav.links a:hover {
+      color: #8A6B29;
+    }
+
+    .private-label-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #C3B070;
+      color: #291214 !important;
+      padding: 5px 20px 5px 5px;
+      border-radius: 30px;
+      font-size: 13.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform .2s, background .2s;
+    }
+
+    .private-label-btn:hover {
+      background: #B6A063;
+      transform: translateY(-1px);
+    }
+
+    .btn-arrow-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #291214;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 6px;
+    }
+
+    .menu-toggle span {
+      width: 24px;
+      height: 2px;
+      background: #291214;
+    }
+
+    @media(max-width:920px) {
+      nav.links {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        right: 0;
+        background: #FFFFFF;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 24px 24px 32px;
+        gap: 20px;
+        border-bottom: 1px solid var(--line);
+        transform: translateY(-130%);
+        transition: transform .3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      nav.links.open {
+        transform: translateY(0);
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 80% -10%, #1E5138 0%, var(--forest) 45%, var(--forest-deep) 100%);
+      color: #F2EEDF;
+      padding: 100px 0 0 0;
+    }
+
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+      padding-bottom: 70px;
+    }
+
+    @media(max-width:920px) {
+      .hero .wrap {
+        grid-template-columns: 1fr;
+        padding-bottom: 40px;
+      }
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .hero .eyebrow::before {
+      background: var(--gold-light);
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5.2vw, 60px);
+      color: #FBF8EF;
+      line-height: 1.05;
+      margin: 20px 0 22px;
+      font-weight: 600;
+    }
+
+    .hero h1 em {
+      color: var(--gold-light);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .hero p.lead {
+      font-size: 17px;
+      color: #CBD8CB;
+      max-width: 480px;
+      margin-bottom: 34px;
+    }
+
+    /* ---------- Buttons ---------- */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 14px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      background: var(--forest);
+      color: #FFFFFF !important;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(22, 60, 44, 0.25);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(22, 60, 44, 0.35);
+      color: #FFFFFF !important;
+    }
+
+    .cta-btn.gold {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      color: var(--forest-deep) !important;
+      box-shadow: 0 4px 15px rgba(200, 155, 60, 0.25);
+    }
+
+    .cta-btn.gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(200, 155, 60, 0.4);
+      border-color: transparent;
+    }
+
+    .cta-btn.outline {
+      background: transparent;
+      color: var(--forest) !important;
+      border: 2px solid var(--forest);
+      box-shadow: none;
+    }
+
+    .cta-btn.outline:hover {
+      background: var(--forest);
+      color: #FFFFFF !important;
+      box-shadow: 0 8px 25px rgba(22, 60, 44, 0.25);
+      border-color: transparent;
+    }
+
+    /* WhatsApp Floating Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      color: #FFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.5);
+    }
+
+    .whatsapp-float svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-ctas .cta-btn.outline {
+      color: #F2EEDF;
+      border-color: rgba(242, 238, 223, 0.4);
+    }
+
+    .hero-ctas .cta-btn.outline:hover {
+      background: rgba(242, 238, 223, 0.1);
+      color: #FFFFFF;
+    }
+
+    .hero-art {
+      position: relative;
+      height: 420px;
+    }
+
+    .hero-art svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .stat-strip {
+      background: var(--forest-deep);
+      border-top: 1px solid rgba(232, 200, 133, 0.18);
+    }
+
+    .stat-strip .wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      padding: 30px 32px;
+    }
+
+    .stat-strip .stat {
+      padding: 0 20px;
+      border-left: 1px solid rgba(232, 200, 133, 0.18);
+    }
+
+    .stat-strip .stat:first-child {
+      border-left: none;
+      padding-left: 0;
+    }
+
+    .stat-strip .num {
+      font-family: 'Fraunces', serif;
+      font-size: 32px;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    .stat-strip .label {
+      font-size: 12.5px;
+      color: #B9C7B9;
+      margin-top: 4px;
+    }
+
+    @media(max-width:760px) {
+      .stat-strip .wrap {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px 0;
+      }
+
+      .stat-strip .stat {
+        border-left: none;
+        padding: 0;
+      }
+    }
+
+    /* ---------- Company Profile (About) ---------- */
+    .about {
+      background: #FFFFFF;
+      overflow: hidden;
+    }
+
+    .about .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    @media(max-width:920px) {
+      .about .wrap {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .about-img-col {
+      position: relative;
+    }
+
+    .about-img-col img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      height: 520px;
+      box-shadow: 0 30px 80px rgba(14, 42, 31, 0.15);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      background: var(--forest-deep);
+      color: #FFFFFF;
+      padding: 28px 32px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(14, 42, 31, 0.3);
+    }
+
+    .about-img-badge .big-num {
+      font-family: 'Fraunces', serif;
+      font-size: 56px;
+      font-weight: 700;
+      color: var(--gold-light);
+      line-height: 1;
+    }
+
+    .about-img-badge .big-label {
+      font-size: 13px;
+      color: #CBD8CB;
+      margin-top: 4px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+
+    .about-text-col .eyebrow {
+      margin-bottom: 16px;
+    }
+
+    .about-text-col h2 {
+      font-size: clamp(28px, 3.4vw, 42px);
+      margin-bottom: 20px;
+      line-height: 1.15;
+    }
+
+    .about-text-col p {
+      color: var(--ink-soft);
+      font-size: 15.5px;
+      margin-bottom: 14px;
+      line-height: 1.75;
+      max-width: 560px;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 32px 0;
+    }
+
+    .about-stat-item {
+      background: var(--cream);
+      border-radius: 14px;
+      padding: 22px 18px;
+      border-left: 4px solid var(--forest);
+    }
+
+    .about-stat-item .num {
+      font-family: 'Fraunces', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--forest-deep);
+      line-height: 1;
+    }
+
+    .about-stat-item .lbl {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 6px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .about-tags span {
+      background: rgba(22, 60, 44, 0.08);
+      color: var(--forest);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      padding: 7px 14px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    /* ---------- Manifest / Rice Range ---------- */
+    .manifest {
+      background: #F7F4EE;
+      color: var(--ink);
+      position: relative;
+      padding-bottom: 80px;
+      padding-top: 80px;
+    }
+
+    .curve-top {
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      z-index: 2;
+    }
+
+    .manifest .head-row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .manifest .eyebrow {
+      margin-bottom: 10px;
+    }
+
+    .manifest h2 {
+      font-size: clamp(32px, 4.5vw, 52px);
+      margin: 0 0 10px;
+      line-height: 1.1;
+      color: var(--forest-deep);
+    }
+
+    .manifest .sub {
+      color: var(--ink-soft);
+      font-size: 15px;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .rice-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 50px;
+      position: relative;
+      z-index: 5;
+    }
+
+    .rice-pills .pill {
+      background: #FFFFFF;
+      color: var(--forest-deep);
+      border: 1.5px solid #DDD5C0;
+      border-radius: 30px;
+      padding: 10px 26px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+
+    .rice-pills .pill.active,
+    .rice-pills .pill:hover {
+      background: var(--forest);
+      color: #FFFFFF;
+      border-color: var(--forest);
+    }
+
+    .carousel-container {
+      width: 100%;
+      overflow-x: auto;
+      padding-bottom: 20px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      position: relative;
+      z-index: 5;
+    }
+
+    .carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 24px;
+      width: max-content;
+      padding: 10px 32px 30px;
+    }
+
+    .rice-card {
+      width: 300px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+      transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.35s;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .rice-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgba(14, 42, 31, 0.15);
+    }
+
+    .rice-img-box {
+      height: 220px;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
+    }
+
+    .rice-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .rice-card:hover .rice-img-box img {
+      transform: scale(1.08);
+    }
+
+    .rice-info {
+      padding: 22px 20px;
+    }
+
+    .rice-info h3 {
+      font-size: 19px;
+      color: var(--forest-deep);
+      margin: 0 0 8px;
+      font-weight: 600;
+    }
+
+    .rice-info p {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+      margin: 0 0 16px;
+    }
+
+    .rice-info .grade-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--cream);
+      color: var(--forest);
+      font-size: 11px;
+      font-weight: 700;
+      font-family: 'JetBrains Mono', monospace;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(22, 60, 44, 0.15);
+    }
+
+    .rice-carousel-wrapper {
+      position: relative;
+      padding: 0 10px;
+    }
+
+    .carousel-arrow {
+      position: absolute;
+      top: 45%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #FFFFFF;
+      border: 2px solid var(--forest);
+      box-shadow: 0 6px 18px rgba(14, 42, 31, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 25;
+      transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+      color: var(--forest);
+    }
+
+    .carousel-arrow:hover {
+      background: var(--forest);
+      color: #FFFFFF;
+      border-color: var(--forest);
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: 0 8px 25px rgba(14, 42, 31, 0.35);
+    }
+
+    .carousel-arrow svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .carousel-arrow.prev {
+      left: -15px;
+    }
+
+    .carousel-arrow.next {
+      right: -15px;
+    }
+
+    @media(max-width:920px) {
+      .carousel-arrow.prev {
+        left: 0px;
+      }
+
+      .carousel-arrow.next {
+        right: 0px;
+      }
+    }
+
+    .scroll-hint {
+      text-align: center;
+      margin-top: 18px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .scroll-hint::before,
+    .scroll-hint::after {
+      content: '';
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--ink-soft);
+      opacity: 0.5;
+    }
+
+    /* ---------- Certifications ---------- */
+    .certs .wrap {}
+
+    .certs h2 {
+      font-size: clamp(28px, 3.4vw, 38px);
+      margin: 16px 0 12px;
+    }
+
+    .certs .sub {
+      color: var(--ink-soft);
+      font-size: 15px;
+      max-width: 560px;
+      margin-bottom: 48px;
+    }
+
+    .stamp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 28px;
+    }
+
+    @media(max-width:920px) {
+      .stamp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:560px) {
+      .stamp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .stamp {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 34px 24px;
+      text-align: center;
+      position: relative;
+    }
+
+    .stamp-ring {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      border: 2px solid var(--forest);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+      position: relative;
+    }
+
+    .stamp-ring::before {
+      content: '';
+      position: absolute;
+      inset: 6px;
+      border: 1px dashed var(--gold);
+      border-radius: 50%;
+    }
+
+    .stamp-ring b {
+      font-family: 'Fraunces', serif;
+      color: var(--forest);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .stamp h4 {
+      font-size: 15.5px;
+      margin-bottom: 8px;
+      color: var(--forest-deep);
+    }
+
+    .stamp p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      line-height: 1.55;
+    }
+
+    /* ---------- Why choose us ---------- */
+    .why {
+      background: var(--paper);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .why h2 {
+      font-size: clamp(28px, 3.4vw, 38px);
+      margin: 16px 0 40px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    @media(max-width:920px) {
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media(max-width:560px) {
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-item {
+      background: var(--paper);
+      padding: 28px 22px;
+    }
+
+    .why-item .idx {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+    }
+
+    .why-item h4 {
+      font-size: 15px;
+      margin: 10px 0 8px;
+      color: var(--forest-deep);
+      font-weight: 600;
+    }
+
+    .why-item p {
+      font-size: 12.8px;
+      color: var(--ink-soft);
+      line-height: 1.5;
+    }
+
+    /* ---------- Vision / Mission / Values ---------- */
+    .vmv {
+      background: var(--cream);
+    }
+
+    .vmv-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--line);
+    }
+
+    @media(max-width:860px) {
+      .vmv-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .vmv-col {
+      padding: 40px 34px;
+      border-right: 1px solid var(--line);
+    }
+
+    .vmv-col:last-child {
+      border-right: none;
+    }
+
+    @media(max-width:860px) {
+      .vmv-col {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .vmv-col:last-child {
+        border-bottom: none;
+      }
+    }
+
+    .vmv-col .eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .vmv-col h3 {
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .vmv-col p {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .values-list {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .values-list li {
+      font-size: 13.5px;
+      color: var(--ink);
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .values-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+    }
+
+    .values-list b {
+      color: var(--forest-deep);
+      font-weight: 600;
+    }
+
+    /* ---------- CTA band ---------- */
+    .cta-band {
+      background: linear-gradient(120deg, var(--forest) 0%, var(--forest-mid) 100%);
+      color: #F2EEDF;
+      text-align: center;
+    }
+
+    .cta-band h2 {
+      color: #FBF8EF;
+      font-size: clamp(26px, 4vw, 40px);
+      max-width: 680px;
+      margin: 14px auto 26px;
+    }
+
+    .cta-band p {
+      color: #CBD8CB;
+      max-width: 520px;
+      margin: 0 auto 34px;
+      font-size: 15px;
+    }
+
+    .cta-band .hero-ctas {
+      justify-content: center;
+    }
+
+    /* ---------- Contact ---------- */
+    .contact .wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    @media(max-width:920px) {
+      .contact .wrap {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    .contact h2 {
+      font-size: clamp(26px, 3.4vw, 36px);
+      margin: 16px 0 18px;
+    }
+
+    .contact p.lead {
+      color: var(--ink-soft);
+      font-size: 14.5px;
+      margin-bottom: 26px;
+      max-width: 440px;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .info-row:last-child {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row .k {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      width: 110px;
+      flex-shrink: 0;
+      padding-top: 2px;
+    }
+
+    .info-row .v {
+      font-size: 14.5px;
+      color: var(--ink);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .field label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      padding: 12px 14px;
+      font-family: 'Work Sans', sans-serif;
+      font-size: 14px;
+      color: var(--ink);
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      outline: 2px solid var(--forest);
+      outline-offset: 1px;
+    }
+
+    .row2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    @media(max-width:560px) {
+      .row2 {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    form .cta-btn {
+      align-self: flex-start;
+      margin-top: 6px;
+      cursor: pointer;
+    }
+
+    /* ---------- Footer ---------- */
+    .site-footer {
+      background: #0E2A1F;
+      color: #E6D8D2;
+      position: relative;
+      padding-bottom: 60px;
+    }
+
+    .foot-graphic-banner {
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      margin-bottom: 50px;
+      background: #FAF6EC;
+    }
+
+    .foot-graphic-banner svg {
+      width: 100%;
+      height: auto;
+      min-height: 200px;
+      display: block;
+    }
+
+    .foot-wrap {
+      position: relative;
+    }
+
+    .foot-main-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1.2fr;
+      gap: 48px;
+      padding-bottom: 20px;
+    }
+
+    @media(max-width: 960px) {
+      .foot-main-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px;
+      }
+    }
+
+    @media(max-width: 580px) {
+      .foot-main-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+
+    .foot-heading {
+      font-family: 'Fraunces', Georgia, serif;
+      font-size: clamp(32px, 3.8vw, 46px);
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 1.15;
+      margin-bottom: 32px;
+      letter-spacing: -0.01em;
+    }
+
+    .foot-outline-btn {
+      display: inline-block;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      color: #FFFFFF !important;
+      padding: 10px 36px;
+      border-radius: 30px;
+      font-size: 13.5px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .foot-outline-btn:hover {
+      background: #FFFFFF;
+      color: #0E2A1F !important;
+    }
+
+    .foot-title {
+      font-family: 'Work Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #FFFFFF;
+      margin-bottom: 22px;
+      letter-spacing: 0.02em;
+    }
+
+    .foot-address {
+      font-style: normal;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #D4C4BD;
+      margin-bottom: 16px;
+    }
+
+    .foot-info-item {
+      margin-bottom: 8px;
+      font-size: 13.5px;
+    }
+
+    .foot-info-item a {
+      color: #D4C4BD;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .foot-info-item a:hover {
+      color: #FFFFFF;
+    }
+
+    .foot-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .foot-links li {
+      margin-bottom: 12px;
+    }
+
+    .foot-links a {
+      color: #D4C4BD;
+      font-size: 13.5px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .foot-links a:hover {
+      color: #FFFFFF;
+    }
+
+    .foot-top-btn {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: background 0.25s, border-color 0.25s;
+    }
+
+    .foot-top-btn:hover {
+      border-color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--forest-deep);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span>Tel: +91 9962992024 &nbsp;·&nbsp; info@srikumaranenterprises.com</span>
+      <div class="tags"><span>APEDA Registered</span><span>FSSAI Certified</span><span>IEC Authorized</span></div>
+    </div>
+  </div>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="brand-logo-link">
+        <img src="logo.png" alt="Sri Kumaran Enterprises Logo" class="top-logo">
+      </a>
+      <nav class="links" id="navLinks">
+        <a href="#">HOME</a>
+        <a href="#about">COMPANY PROFILE <svg width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor"
+            stroke-width="1.8" style="margin-left:3px;">
+            <path d="M1 1l4 4 4-4" />
+          </svg></a>
+        <a href="#products">PRODUCTS <svg width="9" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor"
+            stroke-width="1.8" style="margin-left:3px;">
+            <path d="M1 1l4 4 4-4" />
+          </svg></a>
+        <a href="#certifications">ORGANIC</a>
+        <a href="#why">INVESTOR</a>
+        <a href="#why">CAREER</a>
+        <a href="#contact">CONTACT US</a>
+      </nav>
+      <a href="#contact" class="private-label-btn">
+        <span class="btn-arrow-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </span>
+        <span class="btn-text">Private Label</span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Established 2026 · Tamil Nadu, India</div>
+        <h1>Excellence in every grain,<br><em>connecting global markets.</em></h1>
+        <p class="lead">Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice Through Quality,
+          Integrity, and Trusted Partnerships.</p>
+        <div class="hero-ctas">
+          <a href="#contact" class="cta-btn gold">Request a Quote</a>
+          <a href="#products" class="cta-btn"
+            style="background:transparent; border:2px solid var(--gold-light); color:var(--gold-light) !important;">Explore
+            Rice Range</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <svg viewBox="0 0 480 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="240" cy="200" r="170" stroke="#E8C885" stroke-opacity="0.25" stroke-width="1" />
+          <circle cx="240" cy="200" r="130" stroke="#E8C885" stroke-opacity="0.18" stroke-width="1" />
+          <!-- rice bowl -->
+          <path d="M150 260 Q150 320 240 320 Q330 320 330 260 Z" fill="#C89B3C" />
+          <path d="M158 258 Q158 308 240 308 Q322 308 322 258 Z" fill="#F4E5C0" />
+          <ellipse cx="240" cy="258" rx="82" ry="16" fill="#0E2A1F" />
+          <!-- grains scattered -->
+          <g fill="#F4E5C0">
+            <ellipse cx="205" cy="252" rx="7" ry="3.2" transform="rotate(-20 205 252)" />
+            <ellipse cx="225" cy="246" rx="7" ry="3.2" transform="rotate(10 225 246)" />
+            <ellipse cx="248" cy="250" rx="7" ry="3.2" transform="rotate(-8 248 250)" />
+            <ellipse cx="268" cy="245" rx="7" ry="3.2" transform="rotate(25 268 245)" />
+            <ellipse cx="288" cy="252" rx="7" ry="3.2" transform="rotate(-15 288 252)" />
+            <ellipse cx="180" cy="238" rx="6" ry="3" transform="rotate(15 180 238)" />
+            <ellipse cx="310" cy="236" rx="6" ry="3" transform="rotate(-10 310 236)" />
+          </g>
+          <!-- wheat / rice stalk right -->
+          <g stroke="#E8C885" stroke-width="2" fill="none" stroke-linecap="round">
+            <path d="M360 320 C360 250 380 200 400 140" />
+          </g>
+          <g fill="#E8C885">
+            <ellipse cx="392" cy="160" rx="9" ry="14" transform="rotate(25 392 160)" />
+            <ellipse cx="404" cy="175" rx="9" ry="14" transform="rotate(45 404 175)" />
+            <ellipse cx="380" cy="180" rx="9" ry="14" transform="rotate(5 380 180)" />
+            <ellipse cx="398" cy="200" rx="9" ry="14" transform="rotate(35 398 200)" />
+            <ellipse cx="372" cy="205" rx="9" ry="14" transform="rotate(-5 372 205)" />
+            <ellipse cx="392" cy="225" rx="9" ry="14" transform="rotate(25 392 225)" />
+            <ellipse cx="368" cy="235" rx="9" ry="14" transform="rotate(0 368 235)" />
+          </g>
+          <!-- ship silhouette -->
+          <g fill="#0E2A1F" opacity="0.9">
+            <path d="M70 150 L260 150 L245 190 L85 190 Z" />
+            <rect x="95" y="120" width="18" height="30" />
+            <rect x="120" y="105" width="14" height="45" />
+            <rect x="140" y="115" width="14" height="35" />
+            <rect x="160" y="122" width="14" height="28" />
+          </g>
+          <path d="M40 195 Q165 215 290 195" stroke="#E8C885" stroke-width="2" fill="none" opacity="0.5" />
+        </svg>
+      </div>
+    </div>
+
+    <div class="stat-strip">
+      <div class="wrap">
+        <div class="stat">
+          <div class="num">5+</div>
+          <div class="label">Years in rice distribution</div>
+        </div>
+        <div class="stat">
+          <div class="num">12+</div>
+          <div class="label">Rice varieties exported</div>
+        </div>
+        <div class="stat">
+          <div class="num">04</div>
+          <div class="label">Certifications &amp; registrations</div>
+        </div>
+        <div class="stat">
+          <div class="num">2026</div>
+          <div class="label">Company established</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-img-col">
+        <img src="rice1.png" alt="Sri Kumaran Enterprises - Premium Indian Rice">
+        <div class="about-img-badge">
+          <div class="big-num">5+</div>
+          <div class="big-label">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-text-col">
+        <div class="eyebrow">Company Profile</div>
+        <h2>A Trusted Name in Premium Indian Rice Export</h2>
+        <p>Welcome to <strong>SRI KUMARAN ENTERPRISES</strong>, a trusted exporter and distributor of premium-quality
+          Indian rice. Established in 2026, we deliver superior-quality rice to domestic and international markets with
+          a commitment to quality, reliability, and customer-focused service.</p>
+        <p>Our expertise in sourcing, quality management, packaging, and export operations has enabled us to build
+          strong partnerships with importers, wholesalers, distributors, retailers, and food service partners worldwide.
+        </p>
+
+        <div class="about-stats">
+          <div class="about-stat-item">
+            <div class="num">12+</div>
+            <div class="lbl">Rice Varieties</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="num">04</div>
+            <div class="lbl">Certifications</div>
+          </div>
+          <div class="about-stat-item">
+            <div class="num">100%</div>
+            <div class="lbl">Quality Assured</div>
+          </div>
+        </div>
+
+        <div class="about-tags">
+          <span>MSME Registered</span>
+          <span>APEDA Registered</span>
+          <span>FSSAI Certified</span>
+          <span>IEC Holder</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="manifest" id="products">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="eyebrow">Our Products</div>
+        <h2>Our Rice Range</h2>
+        <p class="sub">A complete portfolio of premium Indian rice varieties, sourced from trusted farmers and reputed
+          mills across India.</p>
+      </div>
+
+      <div class="rice-pills">
+        <button class="pill active" data-filter="all">All Varieties</button>
+        <button class="pill" data-filter="basmati">Basmati</button>
+        <button class="pill" data-filter="everyday">Everyday</button>
+        <button class="pill" data-filter="specialty">Specialty & Organic</button>
+        <button class="pill" data-filter="bulk">Broken & Bulk</button>
+      </div>
+
+      <div class="rice-carousel-wrapper">
+        <button class="carousel-arrow prev" id="prevBtn" aria-label="Scroll left">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+        <div class="carousel-container" id="riceCarousel">
+          <div class="carousel-track">
+            <!-- Card 1 -->
+            <div class="rice-card" data-category="basmati">
+              <div class="rice-img-box">
+                <img src="rice1.png" alt="Premium Basmati Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Premium Basmati</h3>
+                <p>Premium long-grain rice known for its exceptional aroma, delicate flavour, and superior cooking
+                  quality.</p>
+                <span class="grade-tag">Premium Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="rice-card" data-category="everyday">
+              <div class="rice-img-box">
+                <img src="rice2.png" alt="Non-Basmati Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Non-Basmati</h3>
+                <p>High-quality rice varieties offering excellent taste, consistency, and value for global markets.</p>
+                <span class="grade-tag">Standard Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="rice-card" data-category="everyday">
+              <div class="rice-img-box">
+                <img src="rice3.png" alt="Sona Masoori Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Sona Masoori</h3>
+                <p>Light, aromatic, and versatile rice preferred for everyday consumption and traditional cuisines.</p>
+                <span class="grade-tag">Everyday Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="rice-card" data-category="everyday">
+              <div class="rice-img-box">
+                <img src="rice1.png" alt="Ponni Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Ponni Rice</h3>
+                <p>A premium South Indian variety known for its taste, texture, and excellent cooking properties.</p>
+                <span class="grade-tag">Regional Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="rice-card" data-category="bulk everyday">
+              <div class="rice-img-box">
+                <img src="rice2.png" alt="IR64 Rice">
+              </div>
+              <div class="rice-info">
+                <h3>IR64 Rice</h3>
+                <p>A globally preferred export variety appreciated for consistent quality and suitability for bulk
+                  requirements.</p>
+                <span class="grade-tag">Bulk / Export</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="rice-card" data-category="specialty basmati">
+              <div class="rice-img-box">
+                <img src="rice3.png" alt="Jasmine Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Jasmine Rice</h3>
+                <p>Fragrant rice with a soft texture and distinctive aroma, ideal for premium culinary applications.</p>
+                <span class="grade-tag">Premium Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="rice-card" data-category="specialty">
+              <div class="rice-img-box">
+                <img src="rice1.png" alt="Raw Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Raw Rice</h3>
+                <p>Naturally processed rice maintaining its authentic taste, texture, and nutritional characteristics.
+                </p>
+                <span class="grade-tag">Natural</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="rice-card" data-category="specialty">
+              <div class="rice-img-box">
+                <img src="rice2.png" alt="Steam Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Steam Rice</h3>
+                <p>Carefully processed rice offering enhanced grain quality, firmness, and cooking performance.</p>
+                <span class="grade-tag">Processed</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 9 -->
+            <div class="rice-card" data-category="specialty">
+              <div class="rice-img-box">
+                <img src="rice3.png" alt="Parboiled Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Parboiled Rice</h3>
+                <p>A nutrient-rich variety processed to improve grain strength, texture, and shelf stability.</p>
+                <span class="grade-tag">Processed</span>
+              </div>
+            </div>
+
+            <!-- Card 10 -->
+            <div class="rice-card" data-category="specialty">
+              <div class="rice-img-box">
+                <img src="rice1.png" alt="Brown Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Brown Rice</h3>
+                <p>A wholesome rice variety retaining its natural bran layer for a nutritious and balanced choice.</p>
+                <span class="grade-tag">Wholegrain</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 11 -->
+            <div class="rice-card" data-category="bulk">
+              <div class="rice-img-box">
+                <img src="rice2.png" alt="Broken Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Broken Rice</h3>
+                <p>A practical and economical rice option widely used in food processing and commercial applications.
+                </p>
+                <span class="grade-tag">Commercial</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Card 12 -->
+            <div class="rice-card" data-category="specialty">
+              <div class="rice-img-box">
+                <img src="rice3.png" alt="Organic Rice">
+              </div>
+              <div class="rice-info">
+                <h3>Organic Rice</h3>
+                <p>Naturally cultivated rice produced with responsible farming practices for health-conscious consumers.
+                </p>
+                <span class="grade-tag">On Request</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-arrow next" id="nextBtn" aria-label="Scroll right">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+      <div class="scroll-hint">Scroll to explore all varieties</div>
+    </div>
+  </section>
+
+  <section class="certs" id="certifications">
+    <div class="wrap">
+      <div class="eyebrow">Compliance</div>
+      <h2>Certified for global trade</h2>
+      <p class="sub">Our operations comply with the industry standards and export regulations required to move rice
+        safely and legally across borders.</p>
+      <div class="stamp-grid">
+        <div class="stamp">
+          <div class="stamp-ring"><b>APEDA</b></div>
+          <h4>APEDA Registered Exporter</h4>
+          <p>Supporting compliance with agricultural export standards.</p>
+        </div>
+        <div class="stamp">
+          <div class="stamp-ring"><b>FSSAI</b></div>
+          <h4>FSSAI Certified</h4>
+          <p>Ensuring food safety and quality practices.</p>
+        </div>
+        <div class="stamp">
+          <div class="stamp-ring"><b>MSME</b></div>
+          <h4>MSME Registered Company</h4>
+          <p>Recognized as a small and medium enterprise.</p>
+        </div>
+        <div class="stamp">
+          <div class="stamp-ring"><b>IEC</b></div>
+          <h4>IEC Registered</h4>
+          <p>Authorized for international import and export activities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <div class="eyebrow">Why Choose Us</div>
+      <h2>What partners get when they source from us</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="idx">01</div>
+          <h4>5+ Years of Rice Industry Experience</h4>
+          <p>Extensive experience and expertise.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">02</div>
+          <h4>Wide Range of Rice Varieties</h4>
+          <p>Covering all types of rice requirements.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">03</div>
+          <h4>Reliable Global Export Services</h4>
+          <p>Consistent export solutions globally.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">04</div>
+          <h4>Strong Farmer and Supplier Network</h4>
+          <p>Direct relationships for premium sourcing.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">05</div>
+          <h4>Quality-Controlled Products</h4>
+          <p>Strict checks through all operations.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">06</div>
+          <h4>Competitive Pricing</h4>
+          <p>Value driven cost structures.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">07</div>
+          <h4>Customized Packaging Solutions</h4>
+          <p>Adapted to specific customer needs.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">08</div>
+          <h4>Timely Shipment and Delivery</h4>
+          <p>Ensuring your supply chain moves on time.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">09</div>
+          <h4>Transparent Business Practices</h4>
+          <p>Clear, honest and responsible dealings.</p>
+        </div>
+        <div class="why-item">
+          <div class="idx">10</div>
+          <h4>Long-Term Customer Partnership Approach</h4>
+          <p>Building for trust and shared success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vmv">
+    <div class="wrap">
+      <div class="eyebrow">What Drives Us</div>
+      <h2 style="margin:16px 0 36px; font-size:clamp(28px,3.4vw,38px);">Vision, mission &amp; values</h2>
+      <div class="vmv-grid">
+        <div class="vmv-col">
+          <div class="eyebrow">Vision</div>
+          <h3>A trusted global partner</h3>
+          <p>To become a trusted and respected global partner in the rice export industry by delivering exceptional
+            quality, reliability, and value to customers worldwide. We aim to set new benchmarks in responsible
+            sourcing, operational excellence, and customer satisfaction while promoting sustainable growth and long-term
+            partnerships across international markets.</p>
+        </div>
+        <div class="vmv-col">
+          <div class="eyebrow">Mission</div>
+          <h3>Quality, at every stage</h3>
+          <p>Our mission is to deliver premium-quality rice products to global markets through responsible sourcing,
+            strict quality standards, and reliable supply chain management. We are committed to providing our customers
+            with consistent quality, transparent business practices, and dependable service while meeting international
+            food safety and compliance requirements.</p>
+        </div>
+        <div class="vmv-col">
+          <div class="eyebrow">Values</div>
+          <ul class="values-list">
+            <li><b>Quality First</b> — strict standards, careful sourcing.</li>
+            <li><b>Integrity &amp; Trust</b> — transparent, responsible partnerships.</li>
+            <li><b>Customer Focus</b> — dependable, professional solutions.</li>
+            <li><b>Reliability</b> — consistent supply, on time.</li>
+            <li><b>Sustainable Growth</b> — responsible business practices.</li>
+            <li><b>Excellence in Service</b> — commitment and innovation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <div class="eyebrow" style="justify-content:center; color:var(--gold-light);">Get In Touch</div>
+      <h2>Ready to source premium Indian rice for your market?</h2>
+      <p>Tell us your required variety, grade and volume — our team will respond with pricing and shipment options.</p>
+      <div class="hero-ctas"><a href="#contact" class="cta-btn gold">Request a Quote</a></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="contact-info">
+        <div class="eyebrow">Contact</div>
+        <h2>Let's talk rice.</h2>
+        <p class="lead">Reach out for pricing, sample requests or to discuss a long-term supply partnership.</p>
+        <div class="info-row">
+          <div class="k">Email</div>
+          <div class="v">info@srikumaranenterprises.com</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Phone</div>
+          <div class="v">+91 9962992024</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Location</div>
+          <div class="v">Tamil Nadu, India</div>
+        </div>
+        <div class="info-row">
+          <div class="k">Registrations</div>
+          <div class="v">MSME · APEDA · FSSAI · IEC</div>
+        </div>
+      </div>
+      <form
+        onsubmit="event.preventDefault(); this.reset(); alert('Thank you — your enquiry has been noted. We will get back to you shortly.');">
+        <div class="row2">
+          <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
+          <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
+        </div>
+        <div class="row2">
+          <div class="field"><label for="email">Email</label><input id="email" type="email" required></div>
+          <div class="field"><label for="country">Country</label><input id="country" type="text"></div>
+        </div>
+        <div class="field">
+          <label for="variety">Rice variety of interest</label>
+          <select id="variety">
+            <option>Premium Basmati</option>
+            <option>Non-Basmati</option>
+            <option>Sona Masoori</option>
+            <option>Ponni Rice</option>
+            <option>IR64 Rice</option>
+            <option>Jasmine Rice</option>
+            <option>Other / Not sure yet</option>
+          </select>
+        </div>
+        <div class="field"><label for="message">Message</label><textarea id="message" rows="4"></textarea></div>
+        <button type="submit" class="cta-btn">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <!-- Silhouette Banner Graphic -->
+    <div class="foot-graphic-banner">
+      <svg viewBox="0 0 1440 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Hanging Paddy Wheat Stalk Top Left -->
+        <g class="paddy-stalk-hang">
+          <path d="M-10,-10 C50,15 110,45 160,100 M-10,-10 C30,35 80,75 120,135" stroke="#7C8F53" stroke-width="3"
+            fill="none" />
+          <path d="M-10,-10 C80,30 140,80 180,140" stroke="#8A6B29" stroke-width="2" fill="none" />
+          <g fill="#D4A853">
+            <ellipse cx="40" cy="18" rx="6" ry="14" transform="rotate(35 40 18)" />
+            <ellipse cx="65" cy="32" rx="6" ry="14" transform="rotate(45 65 32)" />
+            <ellipse cx="90" cy="50" rx="6" ry="14" transform="rotate(50 90 50)" />
+            <ellipse cx="115" cy="72" rx="6" ry="14" transform="rotate(55 115 72)" />
+            <ellipse cx="138" cy="96" rx="6" ry="14" transform="rotate(60 138 96)" />
+            <ellipse cx="158" cy="122" rx="6" ry="14" transform="rotate(65 158 122)" />
+          </g>
+          <g fill="#E8C885">
+            <ellipse cx="28" cy="30" rx="5" ry="12" transform="rotate(25 28 30)" />
+            <ellipse cx="50" cy="48" rx="5" ry="12" transform="rotate(35 50 48)" />
+            <ellipse cx="74" cy="68" rx="5" ry="12" transform="rotate(40 74 68)" />
+            <ellipse cx="98" cy="90" rx="5" ry="12" transform="rotate(45 98 90)" />
+            <ellipse cx="120" cy="114" rx="5" ry="12" transform="rotate(50 120 114)" />
+          </g>
+        </g>
+
+        <!-- Birds Flying in Sky -->
+        <g fill="#0E2A1F">
+          <path d="M410,65 Q418,53 426,65 Q434,53 442,65 Q434,60 426,68 Q418,60 410,65 Z" />
+          <path d="M450,95 Q456,86 463,95 Q470,86 477,95 Q470,91 463,97 Q456,91 450,95 Z" />
+          <path d="M810,95 Q818,83 826,95 Q834,83 842,95 Q834,90 826,98 Q818,90 810,95 Z" />
+          <path d="M1210,75 Q1218,63 1226,75 Q1234,63 1242,75 Q1234,70 1226,78 Q1218,70 1210,75 Z" />
+        </g>
+
+        <!-- Main Countryside Landscape Silhouette -->
+        <path fill="#0E2A1F" d="
+        M-10,260 L1450,260 L1450,200
+        C1400,195 1370,210 1330,190
+        L1320,175 C1300,160 1280,180 1250,170
+        C1220,160 1200,185 1170,175
+        L1140,190 C1110,180 1080,195 1050,190
+        L1020,180
+        L880,180
+        L760,150 L760,130 L740,120 L740,150 L640,150 L640,90 C640,80 610,80 610,90 L610,150 L580,180
+        L520,180
+        C490,175 460,190 420,180
+        C380,170 350,190 310,185
+        L270,175 C240,165 220,185 180,175
+        C140,165 110,185 80,175 C50,165 20,190 -10,185 Z
+      " />
+
+        <!-- Detailed Farmland Vector Overlay (Trees, Farmer with Oxen, Silo & Barn, Harvester Machine) -->
+        <g fill="#0E2A1F">
+          <!-- Farmland Tree Left -->
+          <path d="M0,190 C15,160 45,150 65,170 C80,140 120,140 135,165 C150,150 180,165 185,190 Z" />
+          <path d="M1280,180 C1300,150 1330,140 1355,160 C1370,135 1410,135 1430,160 Z" />
+
+          <!-- Farmer driving 2 Oxen Plowing -->
+          <circle cx="250" cy="155" r="4.5" />
+          <path d="M250,160 L244,180 M244,180 L238,195 M244,180 L252,195" stroke="#0E2A1F" stroke-width="3.5"
+            stroke-linecap="round" />
+          <path d="M248,165 L232,158 M248,165 L230,155" stroke="#0E2A1F" stroke-width="2.5" stroke-linecap="round" />
+          <path d="M232,185 L320,175" stroke="#0E2A1F" stroke-width="2" />
+          <!-- Ox 1 -->
+          <path
+            d="M295,170 Q305,160 320,165 L335,165 Q345,158 350,168 L340,188 L330,188 L328,178 L315,178 L312,188 L302,188 Z" />
+          <path d="M346,160 Q352,150 348,145 M348,162 Q355,155 358,150" stroke="#0E2A1F" stroke-width="2" fill="none" />
+          <!-- Ox 2 -->
+          <path
+            d="M320,168 Q330,158 345,163 L360,163 Q370,156 375,166 L365,188 L355,188 L353,178 L340,178 L337,188 L327,188 Z" />
+          <path d="M371,158 Q377,148 373,143 M373,160 Q380,153 383,148" stroke="#0E2A1F" stroke-width="2" fill="none" />
+
+          <!-- Silo Tower (Center) -->
+          <path d="M590,90 A20,20 0 0,1 630,90 L630,195 L590,195 Z" />
+          <path
+            d="M595,95 L595,195 M600,95 L600,195 M595,105 L600,105 M595,120 L600,120 M595,135 L600,135 M595,150 L600,150 M595,165 L600,165 M595,180 L600,180"
+            stroke="#FAF6EC" stroke-width="1" />
+          <!-- Barn House connected to Silo -->
+          <path d="M630,125 L690,95 L750,125 L750,195 L630,195 Z" />
+          <path d="M685,80 L695,80 L695,95 L685,95 Z" />
+          <path d="M670,155 Q690,145 710,155 L710,195 L670,195 Z" fill="#FAF6EC" />
+          <polygon points="690,105 680,120 700,120" fill="#FAF6EC" />
+
+          <!-- Combine Harvester Vehicle (Right) -->
+          <circle cx="920" cy="188" r="16" />
+          <circle cx="920" cy="188" r="8" fill="#FAF6EC" />
+          <circle cx="985" cy="188" r="11" />
+          <circle cx="985" cy="188" r="5" fill="#FAF6EC" />
+          <path d="M900,185 L900,145 L940,125 L980,125 L1010,150 L1010,185 Z" />
+          <path d="M942,130 L975,130 L970,150 L942,150 Z" fill="#FAF6EC" />
+          <path d="M860,175 L905,165 L910,188 L865,188 Z" />
+          <circle cx="865" cy="178" r="12" fill="none" stroke="#0E2A1F" stroke-width="2.5" />
+          <path d="M853,178 L877,178 M865,166 L865,190" stroke="#0E2A1F" stroke-width="2" />
+          <path d="M960,125 L940,100 L935,103 L953,125 Z" />
+          <path d="M990,125 L990,110 M993,125 L993,110" stroke="#0E2A1F" stroke-width="2" />
+        </g>
+      </svg>
+    </div>
+
+    <!-- Footer Main Grid Container -->
+    <div class="wrap foot-wrap">
+      <div class="foot-main-grid">
+        <!-- Tagline & Contact Button -->
+        <div class="foot-col-brand">
+          <h2 class="foot-heading">Built on Trust.<br>Delivered Globally.</h2>
+          <a href="#contact" class="foot-outline-btn">Contact Us</a>
+        </div>
+
+        <!-- Column 2: Contact Us -->
+        <div class="foot-col">
+          <h5 class="foot-title">Contact Us</h5>
+          <address class="foot-address">
+            Pinnacle Business Tower 10th Floor,<br>
+            Surajkund, Delhi NCR – 121001, India
+          </address>
+          <div class="foot-info-item">
+            <a href="mailto:info@srikumaranenterprises.com">info@srikumaranenterprises.com</a>
+          </div>
+          <div class="foot-info-item">
+            <a href="tel:+919962992024">+91 9962992024</a>
+          </div>
+        </div>
+
+        <!-- Column 3: Rice -->
+        <div class="foot-col">
+          <h5 class="foot-title">Rice Varieties</h5>
+          <ul class="foot-links">
+            <li><a href="#products">Premium Basmati Rice</a></li>
+            <li><a href="#products">Non-Basmati Rice</a></li>
+            <li><a href="#products">Sona Masoori Rice</a></li>
+            <li><a href="#products">Ponni Rice</a></li>
+            <li><a href="#products">IR64 Rice</a></li>
+            <li><a href="#products">Jasmine Rice</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Back to Top Button -->
+      <a href="#" class="foot-top-btn" id="scrollTopBtn" title="Back to top" aria-label="Back to top">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/919962992024" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" fill="currentColor">
+      <path
+        d="M16 2a13 13 0 0 0-11 20l-2 6 6-2a13 13 0 1 0 7-24zm0 24a11 11 0 0 1-5-1l-3 1 1-3a11 11 0 1 1 7 3zm5-8c0 1-1 3-3 3s-3-1-4-2-3-3-4-5 0-3 1-4l2-2 1 2-1 2s1 2 2 3 3 1 3 1l2-1 1 1-1 2z" />
+    </svg>
+  </a>
+
+  <script>
+    // Mobile Menu
+    const toggle = document.getElementById('menuToggle');
+    const links = document.getElementById('navLinks');
+    if (toggle && links) {
+      toggle.addEventListener('click', () => links.classList.toggle('open'));
+      links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    }
+
+    // Rice Range Filter
+    document.addEventListener('DOMContentLoaded', () => {
+      const pills = document.querySelectorAll('.rice-pills .pill');
+      const cards = document.querySelectorAll('.rice-card');
+
+      pills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          // Update active pill
+          pills.forEach(p => p.classList.remove('active'));
+          pill.classList.add('active');
+
+          const filter = pill.getAttribute('data-filter');
+
+          // Show/hide cards with smooth transition
+          cards.forEach(card => {
+            const cats = card.getAttribute('data-category') || '';
+            if (filter === 'all' || cats.split(' ').includes(filter)) {
+              card.style.display = '';
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(12px)';
+              requestAnimationFrame(() => {
+                card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+              });
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Reset scroll position
+          const carousel = document.getElementById('riceCarousel');
+          if (carousel) carousel.scrollLeft = 0;
+        });
+      });
+
+      // Carousel arrow scroll
+      const carousel = document.getElementById('riceCarousel');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const scrollAmount = 340;
+
+      if (nextBtn && carousel) {
+        nextBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      }
+      if (prevBtn && carousel) {
+        prevBtn.addEventListener('click', () => {
+          carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+      }
+    });
+  </script>
+
+</body>
+
+</html>
