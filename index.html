@@ -2347,8 +2347,7 @@
           </div>
         </div>
       </div>
-      <form
-        onsubmit="event.preventDefault(); this.reset(); alert('Thank you — your enquiry has been noted. We will get back to you shortly.');">
+      <form onsubmit="handleContactSubmit(event, this)">
         <div class="row2">
           <div class="field"><label for="name">Full name</label><input id="name" type="text" required></div>
           <div class="field"><label for="company">Company</label><input id="company" type="text"></div>
@@ -2371,7 +2370,61 @@
         </div>
         <div class="field"><label for="message">Message</label><textarea id="message" rows="4"></textarea></div>
         <button type="submit" class="cta-btn">Send Enquiry</button>
+        <div id="form-msg" style="display: none; margin-top: 15px; font-size: 14.5px; font-weight: 500; border-radius: 6px; padding: 12px 16px;"></div>
       </form>
+
+      <script>
+        async function handleContactSubmit(e, form) {
+          e.preventDefault();
+          
+          const msgBox = document.getElementById('form-msg');
+          msgBox.style.display = 'none';
+
+          const name = form.querySelector('#name').value.trim();
+          const company = form.querySelector('#company').value.trim();
+          const email = form.querySelector('#email').value.trim();
+          const country = form.querySelector('#country').value.trim();
+          const variety = form.querySelector('#variety').value;
+          const message = form.querySelector('#message').value.trim();
+
+          if (!name || !message || !email) {
+            msgBox.style.display = 'block';
+            msgBox.style.backgroundColor = '#fde8e8';
+            msgBox.style.color = '#9b1c1c';
+            msgBox.innerText = 'Please fill out the required fields.';
+            return;
+          }
+
+          const btn = form.querySelector('button[type="submit"]');
+          const originalText = btn.innerText;
+          btn.innerText = 'Sending...';
+          btn.disabled = true;
+
+          try {
+            const res = await fetch('https://formspree.io/f/xdaqwwwj', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ name, company, email, country, variety, message })
+            });
+            
+            if (!res.ok) throw new Error('Submit failed');
+            
+            msgBox.style.display = 'block';
+            msgBox.style.backgroundColor = '#def7ec';
+            msgBox.style.color = '#03543f';
+            msgBox.innerText = 'Thank you \u2014 your enquiry has been sent. We will get back to you shortly.';
+            form.reset();
+          } catch (err) {
+            msgBox.style.display = 'block';
+            msgBox.style.backgroundColor = '#fde8e8';
+            msgBox.style.color = '#9b1c1c';
+            msgBox.innerText = 'Could not send the enquiry. Please try again later.';
+          } finally {
+            btn.innerText = originalText;
+            btn.disabled = false;
+          }
+        }
+      </script>
     </div>
   </section>
 
