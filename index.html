@@ -394,6 +394,64 @@
       color: #8A6B29;
     }
 
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown > a {
+      gap: 5px;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 260px;
+      background: #FFFFFF;
+      border: 1px solid #DDD5C0;
+      border-radius: 14px;
+      padding: 10px 0;
+      box-shadow: 0 16px 40px rgba(14, 42, 31, 0.12);
+      z-index: 40;
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown:focus-within .nav-dropdown-menu {
+      display: block;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 18px;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: #F4F0E4;
+      color: var(--forest);
+    }
+
+    @media(max-width:920px) {
+      .nav-dropdown {
+        width: 100%;
+      }
+
+      .nav-dropdown-menu {
+        display: block;
+        position: static;
+        transform: none;
+        min-width: 0;
+        border: none;
+        box-shadow: none;
+        padding: 4px 0 0 12px;
+        background: transparent;
+      }
+    }
+
     .private-label-btn {
       display: inline-flex;
       align-items: center;
@@ -894,6 +952,7 @@
       margin-bottom: 40px;
     }
 
+    .product-line-pills,
     .rice-pills {
       display: flex;
       justify-content: center;
@@ -904,6 +963,16 @@
       z-index: 5;
     }
 
+    .rice-pills {
+      margin-top: -30px;
+      margin-bottom: 40px;
+    }
+
+    .rice-pills.is-hidden {
+      display: none;
+    }
+
+    .product-line-pills .pill,
     .rice-pills .pill {
       background: #FFFFFF;
       color: var(--forest-deep);
@@ -917,6 +986,8 @@
       transition: all 0.25s ease;
     }
 
+    .product-line-pills .pill.active,
+    .product-line-pills .pill:hover,
     .rice-pills .pill.active,
     .rice-pills .pill:hover {
       background: var(--forest);
@@ -2078,7 +2149,8 @@
         font-size: 10.5px;
       }
 
-      /* Rice Range Mobile Scroll Pills */
+      /* Product Range Mobile Scroll Pills */
+      .product-line-pills,
       .rice-pills {
         overflow-x: auto;
         flex-wrap: nowrap;
@@ -2089,10 +2161,12 @@
         scrollbar-width: none;
       }
 
+      .product-line-pills::-webkit-scrollbar,
       .rice-pills::-webkit-scrollbar {
         display: none;
       }
 
+      .product-line-pills .pill,
       .rice-pills .pill {
         flex-shrink: 0;
         white-space: nowrap;
@@ -2462,7 +2536,16 @@
       <nav class="links" id="navLinks">
         <a href="#">HOME</a>
         <a href="#about">ABOUT US</a>
-        <a href="#products">PRODUCTS</a>
+        <div class="nav-dropdown">
+          <a href="#products">PRODUCTS</a>
+          <div class="nav-dropdown-menu">
+            <a href="#products?line=rice">Rice &amp; Rice Products</a>
+            <a href="#products?line=coconut">Coconut &amp; Coconut Products</a>
+            <a href="#products?line=fruits">Fresh Fruits</a>
+            <a href="#products?line=vegetables">Fresh Vegetables</a>
+            <a href="#products?line=byproducts">Fruits &amp; Vegetable By-Products</a>
+          </div>
+        </div>
         <a href="#certifications">ORGANIC</a>
         <a href="#why">INVESTOR</a>
         <a href="#contact">CONTACT US</a>
@@ -2598,18 +2681,19 @@
   <section class="manifest" id="products">
     <div class="wrap">
       <div class="head-row reveal-up">
-        <div class="eyebrow">Our Products</div>
-        <h2>Our Rice Range</h2>
-        <p class="sub">A complete portfolio of premium Indian rice varieties, sourced from trusted farmers and reputed
-          mills across India.</p>
+        <div class="eyebrow">Export Catalogue</div>
+        <h2>Our Products</h2>
+        <p class="sub">A complete export portfolio of rice, coconut products, fresh fruits, vegetables, and processed
+          by-products — sourced from trusted farmers and processors across India.</p>
       </div>
 
-      <div class="rice-pills reveal-up stagger-1">
-        <button class="pill active" data-filter="all">All Varieties</button>
-        <button class="pill" data-filter="basmati">Basmati</button>
-        <button class="pill" data-filter="everyday">Everyday</button>
-        <button class="pill" data-filter="specialty">Specialty & Organic</button>
-        <button class="pill" data-filter="bulk">Broken & Bulk</button>
+      <div class="product-line-pills reveal-up stagger-1">
+        <button class="pill active" data-line="all">All Products</button>
+        <button class="pill" data-line="rice">Rice &amp; Rice Products</button>
+        <button class="pill" data-line="coconut">Coconut &amp; Coconut Products</button>
+        <button class="pill" data-line="fruits">Fresh Fruits</button>
+        <button class="pill" data-line="vegetables">Fresh Vegetables</button>
+        <button class="pill" data-line="byproducts">Fruits &amp; Vegetable By-Products</button>
       </div>
 
       <div class="rice-carousel-wrapper reveal-up stagger-2">
@@ -2620,13 +2704,13 @@
         </button>
         <div class="carousel-container" id="riceCarousel">
           <div class="carousel-track">
-            <!-- Card 1 -->
-            <div class="rice-card" data-category="basmati">
+            <!-- Rice & Rice Products -->
+            <div class="rice-card" data-line="rice">
               <div class="rice-img-box">
-                <img src="rice1.png" alt="Premium Basmati Rice">
+                <img src="rice1.png" alt="Basmati Rice">
               </div>
               <div class="rice-info">
-                <h3>Premium Basmati</h3>
+                <h3>Basmati Rice</h3>
                 <p>Premium long-grain rice known for its exceptional aroma, delicate flavour, and superior cooking
                   quality.</p>
                 <span class="grade-tag">Premium Grade</span>
@@ -2634,101 +2718,20 @@
               </div>
             </div>
 
-            <!-- Card 2 -->
-            <div class="rice-card" data-category="everyday">
+            <!-- Rice & Rice Products -->
+            <div class="rice-card" data-line="rice">
               <div class="rice-img-box">
                 <img src="rice2.png" alt="Non-Basmati Rice">
               </div>
               <div class="rice-info">
-                <h3>Non-Basmati</h3>
+                <h3>Non-Basmati Rice</h3>
                 <p>High-quality rice varieties offering excellent taste, consistency, and value for global markets.</p>
                 <span class="grade-tag">Standard Grade</span>
                 <a href="#contact" class="know-more">Know More →</a>
               </div>
             </div>
 
-            <!-- Card 3 -->
-            <div class="rice-card" data-category="everyday">
-              <div class="rice-img-box">
-                <img src="rice3.png" alt="Sona Masoori Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Sona Masoori</h3>
-                <p>Light, aromatic, and versatile rice preferred for everyday consumption and traditional cuisines.</p>
-                <span class="grade-tag">Everyday Grade</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="rice-card" data-category="everyday">
-              <div class="rice-img-box">
-                <img src="rice1.png" alt="Ponni Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Ponni Rice</h3>
-                <p>A premium South Indian variety known for its taste, texture, and excellent cooking properties.</p>
-                <span class="grade-tag">Regional Grade</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="rice-card" data-category="bulk everyday">
-              <div class="rice-img-box">
-                <img src="rice2.png" alt="IR64 Rice">
-              </div>
-              <div class="rice-info">
-                <h3>IR64 Rice</h3>
-                <p>A globally preferred export variety appreciated for consistent quality and suitability for bulk
-                  requirements.</p>
-                <span class="grade-tag">Bulk / Export</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="rice-card" data-category="specialty basmati">
-              <div class="rice-img-box">
-                <img src="rice3.png" alt="Jasmine Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Jasmine Rice</h3>
-                <p>Fragrant rice with a soft texture and distinctive aroma, ideal for premium culinary applications.</p>
-                <span class="grade-tag">Premium Grade</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 7 -->
-            <div class="rice-card" data-category="specialty">
-              <div class="rice-img-box">
-                <img src="rice1.png" alt="Raw Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Raw Rice</h3>
-                <p>Naturally processed rice maintaining its authentic taste, texture, and nutritional characteristics.
-                </p>
-                <span class="grade-tag">Natural</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 8 -->
-            <div class="rice-card" data-category="specialty">
-              <div class="rice-img-box">
-                <img src="rice2.png" alt="Steam Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Steam Rice</h3>
-                <p>Carefully processed rice offering enhanced grain quality, firmness, and cooking performance.</p>
-                <span class="grade-tag">Processed</span>
-                <a href="#contact" class="know-more">Know More →</a>
-              </div>
-            </div>
-
-            <!-- Card 9 -->
-            <div class="rice-card" data-category="specialty">
+            <div class="rice-card" data-line="rice">
               <div class="rice-img-box">
                 <img src="rice3.png" alt="Parboiled Rice">
               </div>
@@ -2736,50 +2739,303 @@
                 <h3>Parboiled Rice</h3>
                 <p>A nutrient-rich variety processed to improve grain strength, texture, and shelf stability.</p>
                 <span class="grade-tag">Processed</span>
-              </div>
-            </div>
-
-            <!-- Card 10 -->
-            <div class="rice-card" data-category="specialty">
-              <div class="rice-img-box">
-                <img src="rice1.png" alt="Brown Rice">
-              </div>
-              <div class="rice-info">
-                <h3>Brown Rice</h3>
-                <p>A wholesome rice variety retaining its natural bran layer for a nutritious and balanced choice.</p>
-                <span class="grade-tag">Wholegrain</span>
                 <a href="#contact" class="know-more">Know More →</a>
               </div>
             </div>
 
-            <!-- Card 11 -->
-            <div class="rice-card" data-category="bulk">
+            <div class="rice-card" data-line="rice">
               <div class="rice-img-box">
-                <img src="rice2.png" alt="Broken Rice">
+                <img src="rice-varieties.jpg" alt="Other Rice Varieties">
               </div>
               <div class="rice-info">
-                <h3>Broken Rice</h3>
-                <p>A practical and economical rice option widely used in food processing and commercial applications.
-                </p>
-                <span class="grade-tag">Commercial</span>
+                <h3>Other Rice Varieties</h3>
+                <p>Sona Masoori, Ponni, IR64, and other regional Indian rice varieties for everyday and bulk export.</p>
+                <span class="grade-tag">Regional / Bulk</span>
                 <a href="#contact" class="know-more">Know More →</a>
               </div>
             </div>
 
-            <!-- Card 12 -->
-            <div class="rice-card" data-category="specialty">
+            <div class="rice-card" data-line="rice">
               <div class="rice-img-box">
-                <img src="rice3.png" alt="Organic Rice">
+                <img src="rice-byproducts.jpg" alt="Rice By-Products">
               </div>
               <div class="rice-info">
-                <h3>Organic Rice</h3>
-                <p>Naturally cultivated rice produced with responsible farming practices for health-conscious consumers.
-                </p>
+                <h3>Rice By-Products</h3>
+                <p>Broken rice, rice bran, and husk — practical by-products for food processing and industrial use.</p>
+                <span class="grade-tag">By-Product</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Coconut & Coconut Products -->
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-crate.jpg" alt="Fresh Coconut">
+              </div>
+              <div class="rice-info">
+                <h3>Fresh Coconut</h3>
+                <p>Export-grade fresh coconuts packed in wooden crates, sourced from South Indian coconut farms.</p>
+                <span class="grade-tag">Fresh / Export</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-desiccated.jpg" alt="Desiccated Coconut">
+              </div>
+              <div class="rice-info">
+                <h3>Desiccated Coconut</h3>
+                <p>Fine-grade dried coconut used in confectionery, bakery, and food manufacturing worldwide.</p>
+                <span class="grade-tag">Food Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-milk.jpg" alt="Coconut Milk">
+              </div>
+              <div class="rice-info">
+                <h3>Coconut Milk</h3>
+                <p>Creamy coconut milk and cream for culinary, beverage, and processed food applications.</p>
+                <span class="grade-tag">Food Grade</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-oil.jpg" alt="Coconut Oil">
+              </div>
+              <div class="rice-info">
+                <h3>Coconut Oil</h3>
+                <p>Virgin and refined coconut oil for culinary, cosmetic, and industrial export markets.</p>
+                <span class="grade-tag">Refined / Virgin</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-charcoal.jpg" alt="Coconut Shell Products">
+              </div>
+              <div class="rice-info">
+                <h3>Coconut Shell Products</h3>
+                <p>Coconut shell charcoal, activated carbon, and shell chips for energy and filtration industries.</p>
+                <span class="grade-tag">Industrial</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="coconut">
+              <div class="rice-img-box">
+                <img src="coconut-byproducts.jpg" alt="Coconut By-Products">
+              </div>
+              <div class="rice-info">
+                <h3>Coconut By-Products</h3>
+                <p>Copra, coir fibre, husk chips, and other coconut by-products for food and industrial use.</p>
+                <span class="grade-tag">By-Product</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Fresh Fruits -->
+            <div class="rice-card" data-line="fruits">
+              <div class="rice-img-box">
+                <img src="mango.jpg" alt="Mango">
+              </div>
+              <div class="rice-info">
+                <h3>Mango</h3>
+                <p>Premium Indian mangoes including Alphonso and Banganapalli varieties for fresh fruit export.</p>
+                <span class="grade-tag">Seasonal</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="fruits">
+              <div class="rice-img-box">
+                <img src="banana.jpg" alt="Banana">
+              </div>
+              <div class="rice-info">
+                <h3>Banana</h3>
+                <p>Fresh Cavendish and native Indian bananas packed for bulk and retail export markets.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="fruits">
+              <div class="rice-img-box">
+                <img src="pineapple.jpg" alt="Pineapple">
+              </div>
+              <div class="rice-info">
+                <h3>Pineapple</h3>
+                <p>Sweet tropical pineapples sourced from South Indian farms for fresh and processing export.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="fruits">
+              <div class="rice-img-box">
+                <img src="papaya.jpg" alt="Papaya">
+              </div>
+              <div class="rice-info">
+                <h3>Papaya</h3>
+                <p>Ripe and firm papayas with rich orange flesh, suitable for fresh consumption and pulp processing.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="fruits">
+              <div class="rice-img-box">
+                <img src="seasonal-fruits.jpg" alt="Other Seasonal Fruits">
+              </div>
+              <div class="rice-info">
+                <h3>Other Seasonal Fruits</h3>
+                <p>Guava, pomegranate, grapes, and other seasonal Indian fruits available on enquiry.</p>
+                <span class="grade-tag">Seasonal</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Fresh Vegetables -->
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="onion.jpg" alt="Onion">
+              </div>
+              <div class="rice-info">
+                <h3>Onion</h3>
+                <p>Red and Nashik onions packed for bulk vegetable export with consistent size and shelf life.</p>
+                <span class="grade-tag">Fresh / Bulk</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="potato.jpg" alt="Potato">
+              </div>
+              <div class="rice-info">
+                <h3>Potato</h3>
+                <p>Table and processing potatoes suitable for fresh markets, chips, and frozen food industries.</p>
+                <span class="grade-tag">Fresh / Bulk</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="tomato.jpg" alt="Tomato">
+              </div>
+              <div class="rice-info">
+                <h3>Tomato</h3>
+                <p>Firm, ripe tomatoes for fresh export and processing into puree, paste, and sauces.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="drumstick.jpg" alt="Drumstick">
+              </div>
+              <div class="rice-info">
+                <h3>Drumstick</h3>
+                <p>Fresh moringa (drumstick) pods, a South Indian specialty vegetable for culinary and health markets.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="green-chilli.jpg" alt="Green Chilli">
+              </div>
+              <div class="rice-info">
+                <h3>Green Chilli</h3>
+                <p>Fresh green chillies with consistent heat and colour, packed for bulk vegetable export.</p>
+                <span class="grade-tag">Fresh</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="vegetables">
+              <div class="rice-img-box">
+                <img src="vegetables.jpg" alt="Other Vegetables">
+              </div>
+              <div class="rice-info">
+                <h3>Other Vegetables</h3>
+                <p>Okra, brinjal, beans, carrots, and other Indian vegetables available as per seasonal demand.</p>
+                <span class="grade-tag">Seasonal</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <!-- Fruits & Vegetable By-Products -->
+            <div class="rice-card" data-line="byproducts">
+              <div class="rice-img-box">
+                <img src="dried-fruits.jpg" alt="Dried Fruits">
+              </div>
+              <div class="rice-info">
+                <h3>Dried Fruits</h3>
+                <p>Raisins, dates, dried mango, and other dehydrated fruits for snack and food manufacturing export.</p>
+                <span class="grade-tag">Processed</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="byproducts">
+              <div class="rice-img-box">
+                <img src="dried-vegetables.jpg" alt="Dried Vegetables">
+              </div>
+              <div class="rice-info">
+                <h3>Dried Vegetables</h3>
+                <p>Dehydrated onion, tomato, and mixed vegetable flakes for soups, seasoning, and ready meals.</p>
+                <span class="grade-tag">Processed</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="byproducts">
+              <div class="rice-img-box">
+                <img src="fruit-products.jpg" alt="Fruit Products">
+              </div>
+              <div class="rice-info">
+                <h3>Fruit Products</h3>
+                <p>Mango pulp, fruit puree, juices, and concentrates packed for beverage and food processors.</p>
+                <span class="grade-tag">Processed</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="byproducts">
+              <div class="rice-img-box">
+                <img src="vegetable-products.jpg" alt="Vegetable Products">
+              </div>
+              <div class="rice-info">
+                <h3>Vegetable Products</h3>
+                <p>Pickles, canned vegetables, and processed vegetable preparations for retail and food service.</p>
+                <span class="grade-tag">Processed</span>
+                <a href="#contact" class="know-more">Know More →</a>
+              </div>
+            </div>
+
+            <div class="rice-card" data-line="byproducts">
+              <div class="rice-img-box">
+                <img src="processed-products.jpg" alt="Other Processed Products">
+              </div>
+              <div class="rice-info">
+                <h3>Other Processed Products</h3>
+                <p>Custom processed fruit and vegetable items packed to buyer specifications and export standards.</p>
                 <span class="grade-tag">On Request</span>
                 <a href="#contact" class="know-more">Know More →</a>
               </div>
             </div>
           </div>
+
         </div>
         <button class="carousel-arrow next" id="nextBtn" aria-label="Scroll right">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
@@ -2787,7 +3043,7 @@
           </svg>
         </button>
       </div>
-      <div class="scroll-hint">Scroll to explore all varieties</div>
+      <div class="scroll-hint">Scroll to explore all products</div>
     </div>
   </section>
 
@@ -3168,14 +3424,45 @@
             <div class="field"><label for="country">Country</label><input id="country" type="text" placeholder="United Arab Emirates"></div>
           </div>
           <div class="field">
-            <label for="variety">Rice variety of interest</label>
+            <label for="variety">Product of interest</label>
             <select id="variety">
-              <option>Premium Basmati Rice</option>
-              <option>Sona Masoori Rice</option>
-              <option>Ponni Rice Variety</option>
-              <option>IR64 Non-Basmati</option>
-              <option>Steam &amp; Parboiled Rice</option>
-              <option>Broken / Commercial Rice</option>
+              <optgroup label="Rice &amp; Rice Products">
+                <option>Basmati Rice</option>
+                <option>Non-Basmati Rice</option>
+                <option>Parboiled Rice</option>
+                <option>Other Rice Varieties</option>
+                <option>Rice By-Products</option>
+              </optgroup>
+              <optgroup label="Coconut &amp; Coconut Products">
+                <option>Fresh Coconut</option>
+                <option>Desiccated Coconut</option>
+                <option>Coconut Milk</option>
+                <option>Coconut Oil</option>
+                <option>Coconut Shell Products</option>
+                <option>Coconut By-Products</option>
+              </optgroup>
+              <optgroup label="Fresh Fruits">
+                <option>Mango</option>
+                <option>Banana</option>
+                <option>Pineapple</option>
+                <option>Papaya</option>
+                <option>Other Seasonal Fruits</option>
+              </optgroup>
+              <optgroup label="Fresh Vegetables">
+                <option>Onion</option>
+                <option>Potato</option>
+                <option>Tomato</option>
+                <option>Drumstick</option>
+                <option>Green Chilli</option>
+                <option>Other Vegetables</option>
+              </optgroup>
+              <optgroup label="Fruits &amp; Vegetable By-Products">
+                <option>Dried Fruits</option>
+                <option>Dried Vegetables</option>
+                <option>Fruit Products</option>
+                <option>Vegetable Products</option>
+                <option>Other Processed Products</option>
+              </optgroup>
               <option>Other / Custom Order</option>
             </select>
           </div>
@@ -3374,16 +3661,15 @@
           </div>
         </div>
 
-        <!-- Column 3: Rice -->
+        <!-- Column 3: Products -->
         <div class="foot-col">
-          <h5 class="foot-title">Rice Varieties</h5>
+          <h5 class="foot-title">Our Products</h5>
           <ul class="foot-links">
-            <li><a href="#products">Premium Basmati Rice</a></li>
-            <li><a href="#products">Non-Basmati Rice</a></li>
-            <li><a href="#products">Sona Masoori Rice</a></li>
-            <li><a href="#products">Ponni Rice</a></li>
-            <li><a href="#products">IR64 Rice</a></li>
-            <li><a href="#products">Jasmine Rice</a></li>
+            <li><a href="#products?line=rice">Rice &amp; Rice Products</a></li>
+            <li><a href="#products?line=coconut">Coconut &amp; Coconut Products</a></li>
+            <li><a href="#products?line=fruits">Fresh Fruits</a></li>
+            <li><a href="#products?line=vegetables">Fresh Vegetables</a></li>
+            <li><a href="#products?line=byproducts">Fruits &amp; Vegetable By-Products</a></li>
           </ul>
         </div>
       </div>
@@ -3500,44 +3786,72 @@
       links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
     }
 
-    // Rice Range Filter
+    // Product Range Filter (with hash interlink support)
     document.addEventListener('DOMContentLoaded', () => {
-      const pills = document.querySelectorAll('.rice-pills .pill');
+      const linePills = document.querySelectorAll('.product-line-pills .pill');
       const cards = document.querySelectorAll('.rice-card');
+      const carousel = document.getElementById('riceCarousel');
 
-      pills.forEach(pill => {
-        pill.addEventListener('click', () => {
-          // Update active pill
-          pills.forEach(p => p.classList.remove('active'));
-          pill.classList.add('active');
-
-          const filter = pill.getAttribute('data-filter');
-
-          // Show/hide cards with smooth transition
-          cards.forEach(card => {
-            const cats = card.getAttribute('data-category') || '';
-            if (filter === 'all' || cats.split(' ').includes(filter)) {
-              card.style.display = '';
-              card.style.opacity = '0';
-              card.style.transform = 'translateY(12px)';
-              requestAnimationFrame(() => {
-                card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-              });
-            } else {
-              card.style.display = 'none';
-            }
+      const animateCard = (card, show) => {
+        if (show) {
+          card.style.display = '';
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          requestAnimationFrame(() => {
+            card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
           });
+        } else {
+          card.style.display = 'none';
+        }
+      };
 
-          // Reset scroll position
-          const carousel = document.getElementById('riceCarousel');
-          if (carousel) carousel.scrollLeft = 0;
+      const updateHash = (line) => {
+        const hash = line && line !== 'all' ? `#products?line=${line}` : '#products';
+        if (window.location.hash !== hash) {
+          history.replaceState(null, '', hash);
+        }
+      };
+
+      const applyProductFilter = (line = 'all', updateUrl = true) => {
+        linePills.forEach(p => p.classList.toggle('active', p.getAttribute('data-line') === line));
+
+        cards.forEach(card => {
+          const cardLine = card.getAttribute('data-line') || '';
+          const show = line === 'all' || cardLine === line;
+          animateCard(card, show);
+        });
+
+        if (carousel) carousel.scrollLeft = 0;
+        if (updateUrl) updateHash(line);
+      };
+
+      const parseHashFilter = () => {
+        const hash = window.location.hash || '';
+        if (!hash.startsWith('#products')) return;
+
+        const queryPart = hash.includes('?') ? hash.split('?')[1] : '';
+        const params = new URLSearchParams(queryPart);
+        applyProductFilter(params.get('line') || 'all', false);
+      };
+
+      linePills.forEach(pill => {
+        pill.addEventListener('click', () => {
+          applyProductFilter(pill.getAttribute('data-line'));
         });
       });
 
+      document.querySelectorAll('a[href^="#products"]').forEach(link => {
+        link.addEventListener('click', () => {
+          setTimeout(parseHashFilter, 0);
+        });
+      });
+
+      window.addEventListener('hashchange', parseHashFilter);
+      parseHashFilter();
+
       // Carousel arrow scroll
-      const carousel = document.getElementById('riceCarousel');
       const prevBtn = document.getElementById('prevBtn');
       const nextBtn = document.getElementById('nextBtn');
       const scrollAmount = 340;
