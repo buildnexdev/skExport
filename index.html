@@ -761,6 +761,15 @@
       font-weight: 600;
     }
 
+    .stat-strip .num,
+    .stat-strip .label {
+      transition: opacity 0.35s ease;
+    }
+
+    .stat-strip .is-fading {
+      opacity: 0;
+    }
+
     .stat-strip .label {
       font-size: 12.5px;
       color: #B9C7B9;
@@ -2569,12 +2578,8 @@
   <section class="hero">
     <!-- Full-screen Background Video & Overlay -->
     <div class="hero-video-container">
-      <video class="hero-video" autoplay muted loop playsinline poster="rice1.png" id="heroBgVideo">
+      <video class="hero-video" autoplay muted playsinline poster="rice1.png" id="heroBgVideo">
         <source src="hero-farmer-rice.mp4" type="video/mp4">
-        <source src="hero-rice-grains.mp4" type="video/mp4">
-        <source src="hero-video.mp4" type="video/mp4">
-        <source src="hero-video-drone.mp4" type="video/mp4">
-        <source src="https://assets.mixkit.co/videos/15198/15198-720.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
     </div>
@@ -2596,7 +2601,7 @@
           Integrity, and Trusted Partnerships.</p>
         <div class="hero-ctas">
           <a href="#contact" class="cta-btn gold">Request a Quote</a>
-          <a href="#products" class="cta-btn"
+          <a href="#products?line=rice" class="cta-btn" id="heroExploreBtn"
             style="background:transparent; border:2px solid var(--gold-light); color:var(--gold-light) !important;">Explore
             Rice Range</a>
         </div>
@@ -2616,11 +2621,11 @@
       <div class="wrap">
         <div class="stat reveal-up stagger-1">
           <div class="num">5+</div>
-          <div class="label">Years in rice distribution</div>
+          <div class="label" id="heroYearsLabel">Years in rice distribution</div>
         </div>
         <div class="stat reveal-up stagger-2">
-          <div class="num">12+</div>
-          <div class="label">Rice varieties exported</div>
+          <div class="num" id="heroStatNum">12+</div>
+          <div class="label" id="heroStatLabel">Rice varieties exported</div>
         </div>
         <div class="stat reveal-up stagger-3">
           <div class="num">04</div>
@@ -3867,31 +3872,127 @@
         });
       }
 
-      // Background video scene switcher for dynamic rice farming showcase
+      // Homepage hero: rotate rice / coconut / fruits / vegetables videos + matching stat text
       const heroVid = document.getElementById('heroBgVideo');
+      const heroYearsLabel = document.getElementById('heroYearsLabel');
+      const heroStatNum = document.getElementById('heroStatNum');
+      const heroStatLabel = document.getElementById('heroStatLabel');
+      const heroExploreBtn = document.getElementById('heroExploreBtn');
+
       if (heroVid) {
         heroVid.muted = true;
-        const playlist = [
-          'hero-farmer-rice.mp4',
-          'hero-rice-grains.mp4',
-          'hero-video-drone.mp4',
-          'hero-rice-falling.mp4'
-        ];
-        let currentTrack = 0;
+        heroVid.loop = true;
 
-        const playNextVideo = () => {
-          currentTrack = (currentTrack + 1) % playlist.length;
-          heroVid.src = playlist[currentTrack];
-          heroVid.load();
-          heroVid.play().catch(() => {});
+        const scenes = [
+          {
+            srcs: ['hero-farmer-rice.mp4', 'hero-rice-grains.mp4', 'hero-video-drone.mp4'],
+            num: '12+',
+            label: 'Rice varieties exported',
+            years: 'Years in rice distribution',
+            cta: 'Explore Rice Range',
+            href: '#products?line=rice'
+          },
+          {
+            srcs: [
+              'hero-coconut.mp4',
+              'https://assets.mixkit.co/videos/6910/6910-720.mp4',
+              'https://assets.mixkit.co/videos/16550/16550-720.mp4',
+              'https://assets.mixkit.co/videos/7099/7099-720.mp4'
+            ],
+            num: '06+',
+            label: 'Coconut products exported',
+            years: 'Years in coconut distribution',
+            cta: 'Explore Coconut Range',
+            href: '#products?line=coconut'
+          },
+          {
+            srcs: [
+              'hero-fruits.mp4',
+              'https://assets.mixkit.co/videos/990/990-720.mp4',
+              'https://assets.mixkit.co/videos/22688/22688-720.mp4',
+              'https://assets.mixkit.co/videos/991/991-720.mp4'
+            ],
+            num: '05+',
+            label: 'Fresh fruits exported',
+            years: 'Years in fruit distribution',
+            cta: 'Explore Fresh Fruits',
+            href: '#products?line=fruits'
+          },
+          {
+            srcs: [
+              'hero-vegetables.mp4',
+              'https://assets.mixkit.co/videos/4653/4653-720.mp4',
+              'https://assets.mixkit.co/videos/982/982-720.mp4',
+              'https://assets.mixkit.co/videos/8167/8167-720.mp4'
+            ],
+            num: '06+',
+            label: 'Fresh vegetables exported',
+            years: 'Years in vegetable distribution',
+            cta: 'Explore Fresh Vegetables',
+            href: '#products?line=vegetables'
+          }
+        ];
+
+        let currentScene = 0;
+        let currentSrcIndex = 0;
+        let sceneTimer = null;
+        const SCENE_DURATION = 5000;
+
+        const updateHeroCopy = (scene) => {
+          const fadeEls = [heroYearsLabel, heroStatNum, heroStatLabel].filter(Boolean);
+          fadeEls.forEach(el => el.classList.add('is-fading'));
+          setTimeout(() => {
+            if (heroYearsLabel) heroYearsLabel.textContent = scene.years;
+            if (heroStatNum) heroStatNum.textContent = scene.num;
+            if (heroStatLabel) heroStatLabel.textContent = scene.label;
+            fadeEls.forEach(el => el.classList.remove('is-fading'));
+          }, 280);
+
+          if (heroExploreBtn) {
+            heroExploreBtn.textContent = scene.cta;
+            heroExploreBtn.setAttribute('href', scene.href);
+          }
         };
 
-        heroVid.addEventListener('ended', playNextVideo);
+        const playScene = (sceneIndex, srcIndex = 0) => {
+          const scene = scenes[sceneIndex];
+          if (!scene || !scene.srcs[srcIndex]) {
+            playNextScene();
+            return;
+          }
+          currentScene = sceneIndex;
+          currentSrcIndex = srcIndex;
+          heroVid.src = scene.srcs[srcIndex];
+          heroVid.load();
+          heroVid.play().catch(() => {});
+          updateHeroCopy(scene);
+        };
+
+        const startSceneTimer = () => {
+          clearInterval(sceneTimer);
+          sceneTimer = setInterval(playNextScene, SCENE_DURATION);
+        };
+
+        const playNextScene = () => {
+          playScene((currentScene + 1) % scenes.length, 0);
+          startSceneTimer();
+        };
+
+        heroVid.addEventListener('error', () => {
+          const scene = scenes[currentScene];
+          if (scene && currentSrcIndex + 1 < scene.srcs.length) {
+            playScene(currentScene, currentSrcIndex + 1);
+          } else {
+            playNextScene();
+          }
+        });
 
         const playVid = () => {
           heroVid.play().catch(() => {});
         };
         playVid();
+        updateHeroCopy(scenes[0]);
+        startSceneTimer();
         window.addEventListener('touchstart', playVid, { once: true });
         window.addEventListener('click', playVid, { once: true });
       }
