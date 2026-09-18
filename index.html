@@ -557,11 +557,27 @@
       min-height: 100%;
       width: auto;
       height: auto;
-      transform: translate(-50%, -50%) scale(1.05);
+      transform: translate(-50%, -50%) scale(1.08);
       object-fit: cover;
       object-position: center center;
       filter: saturate(1.18) contrast(1.06) brightness(0.95);
-      will-change: transform;
+      opacity: 0;
+      transition: opacity 1.15s ease;
+      pointer-events: none;
+    }
+
+    .hero-video.is-active {
+      opacity: 1;
+      animation: heroKenBurns 8s ease-out forwards;
+    }
+
+    @keyframes heroKenBurns {
+      from {
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+      to {
+        transform: translate(-50%, -50%) scale(1.16);
+      }
     }
 
     /* Dark Emerald Green Overlay (65-75% opacity) with Subtle Vignette & Left-to-Right Soft Gradient */
@@ -2578,9 +2594,10 @@
   <section class="hero">
     <!-- Full-screen Background Video & Overlay -->
     <div class="hero-video-container">
-      <video class="hero-video" autoplay muted playsinline poster="rice1.png" id="heroBgVideo">
+      <video class="hero-video is-active" autoplay muted playsinline poster="rice1.png" id="heroBgVideo">
         <source src="hero-farmer-rice.mp4" type="video/mp4">
       </video>
+      <video class="hero-video" muted playsinline id="heroBgVideoNext"></video>
       <div class="hero-overlay"></div>
     </div>
 
@@ -3874,14 +3891,19 @@
 
       // Homepage hero: rotate rice / coconut / fruits / vegetables videos + matching stat text
       const heroVid = document.getElementById('heroBgVideo');
+      const heroVidNext = document.getElementById('heroBgVideoNext');
       const heroYearsLabel = document.getElementById('heroYearsLabel');
       const heroStatNum = document.getElementById('heroStatNum');
       const heroStatLabel = document.getElementById('heroStatLabel');
       const heroExploreBtn = document.getElementById('heroExploreBtn');
 
-      if (heroVid) {
-        heroVid.muted = true;
-        heroVid.loop = true;
+      if (heroVid && heroVidNext) {
+        const players = [heroVid, heroVidNext];
+        players.forEach(v => {
+          v.muted = true;
+          v.loop = true;
+          v.playsInline = true;
+        });
 
         const scenes = [
           {
@@ -3934,9 +3956,11 @@
         ];
 
         let currentScene = 0;
-        let currentSrcIndex = 0;
+        let activePlayer = 0;
         let sceneTimer = null;
+        let switching = false;
         const SCENE_DURATION = 5000;
+        const FADE_MS = 1150;
 
         const updateHeroCopy = (scene) => {
           const fadeEls = [heroYearsLabel, heroStatNum, heroStatLabel].filter(Boolean);
@@ -3954,44 +3978,81 @@
           }
         };
 
-        const playScene = (sceneIndex, srcIndex = 0) => {
-          const scene = scenes[sceneIndex];
-          if (!scene || !scene.srcs[srcIndex]) {
-            playNextScene();
+        const loadSrc = (video, srcs, index = 0) => new Promise((resolve, reject) => {
+          if (!srcs || index >= srcs.length) {
+            reject();
             return;
           }
-          currentScene = sceneIndex;
-          currentSrcIndex = srcIndex;
-          heroVid.src = scene.srcs[srcIndex];
-          heroVid.load();
-          heroVid.play().catch(() => {});
-          updateHeroCopy(scene);
+
+          const cleanup = () => {
+            video.removeEventListener('canplay', onReady);
+            video.removeEventListener('error', onError);
+          };
+
+          const onReady = () => {
+            cleanup();
+            video.play().then(resolve).catch(() => loadSrc(video, srcs, index + 1).then(resolve).catch(reject));
+          };
+
+          const onError = () => {
+            cleanup();
+            loadSrc(video, srcs, index + 1).then(resolve).catch(reject);
+          };
+
+          video.addEventListener('canplay', onReady, { once: true });
+          video.addEventListener('error', onError, { once: true });
+          video.src = srcs[index];
+          video.load();
+        });
+
+        const playScene = (sceneIndex, { fade = true } = {}) => {
+          const scene = scenes[sceneIndex];
+          if (!scene || switching) return;
+
+          if (!fade) {
+            currentScene = sceneIndex;
+            updateHeroCopy(scene);
+            heroVid.play().catch(() => {});
+            return;
+          }
+
+          switching = true;
+          const incoming = players[1 - activePlayer];
+          const outgoing = players[activePlayer];
+
+          incoming.classList.remove('is-active');
+          incoming.style.animation = 'none';
+
+          loadSrc(incoming, scene.srcs).then(() => {
+            incoming.style.animation = '';
+            incoming.classList.add('is-active');
+            outgoing.classList.remove('is-active');
+            currentScene = sceneIndex;
+            activePlayer = 1 - activePlayer;
+            updateHeroCopy(scene);
+
+            setTimeout(() => {
+              outgoing.pause();
+              switching = false;
+            }, FADE_MS);
+          }).catch(() => {
+            switching = false;
+            playScene((sceneIndex + 1) % scenes.length);
+          });
         };
 
         const startSceneTimer = () => {
           clearInterval(sceneTimer);
-          sceneTimer = setInterval(playNextScene, SCENE_DURATION);
+          sceneTimer = setInterval(() => {
+            playScene((currentScene + 1) % scenes.length);
+          }, SCENE_DURATION);
         };
-
-        const playNextScene = () => {
-          playScene((currentScene + 1) % scenes.length, 0);
-          startSceneTimer();
-        };
-
-        heroVid.addEventListener('error', () => {
-          const scene = scenes[currentScene];
-          if (scene && currentSrcIndex + 1 < scene.srcs.length) {
-            playScene(currentScene, currentSrcIndex + 1);
-          } else {
-            playNextScene();
-          }
-        });
 
         const playVid = () => {
-          heroVid.play().catch(() => {});
+          players[activePlayer].play().catch(() => {});
         };
-        playVid();
-        updateHeroCopy(scenes[0]);
+
+        playScene(0, { fade: false });
         startSceneTimer();
         window.addEventListener('touchstart', playVid, { once: true });
         window.addEventListener('click', playVid, { once: true });
