@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <clipPath id="seal"><circle cx="511.5" cy="511.5" r="468"/></clipPath>
+  </defs>
+  <image href="logo-all-products.png" x="0" y="0" width="1024" height="1024" clip-path="url(#seal)"/>
+</svg>

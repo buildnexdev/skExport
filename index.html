@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sri Kumaran Enterprises</title>
-  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="icon" href="logo-all-products.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -190,6 +190,8 @@
       height: 76px;
       width: auto;
       filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.5));
+      background: transparent;
+      border-radius: 50%;
     }
 
     .orbital-spinner {
@@ -369,6 +371,8 @@
       width: auto;
       max-width: 240px;
       object-fit: contain;
+      background: transparent;
+      border-radius: 50%;
     }
 
     nav.links {
@@ -736,6 +740,18 @@
     .hero-art {
       position: relative;
       height: 420px;
+    }
+
+    .hero h1.is-fading,
+    .hero .lead.is-fading,
+    .floating-tag.is-fading {
+      opacity: 0;
+    }
+
+    .hero h1,
+    .hero .lead,
+    .floating-tag {
+      transition: opacity 0.35s ease;
     }
 
     .hero-art svg {
@@ -2520,7 +2536,7 @@
   <!-- Premium Rice Sheaf Orbital Preloader -->
   <div class="page-preloader" id="pagePreloader">
     <div class="preloader-card">
-      <img src="logo.png" alt="Sri Kumaran Enterprises" class="preloader-brand-logo">
+      <img src="logo-all-products.png" alt="Sri Kumaran Enterprises" class="preloader-brand-logo">
       
       <!-- Multi-ring Orbital Rice Spinner -->
       <div class="orbital-spinner">
@@ -2554,7 +2570,7 @@
   <header>
     <div class="wrap nav">
       <a href="#" class="brand-logo-link" style="gap: 12px;">
-        <img src="logo.png" alt="Sri Kumaran Enterprises Logo" class="top-logo">
+        <img src="logo-all-products.png" alt="Sri Kumaran Enterprises Logo" class="top-logo">
         <span style="font-size: 22px; font-weight: 700; color: #0E2A1F; font-family: 'Fraunces', serif;">Sri Kumaran
           Enterprises</span>
       </a>
@@ -2613,8 +2629,8 @@
     <div class="wrap">
       <div class="hero-copy reveal-right">
         <div class="eyebrow">Tamil Nadu, India</div>
-        <h1>Excellence in every grain,<br><em>connecting global markets.</em></h1>
-        <p class="lead">Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice Through Quality,
+        <h1 id="heroTitle">Excellence in every grain,<br><em>connecting global markets.</em></h1>
+        <p class="lead" id="heroLead">Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice Through Quality,
           Integrity, and Trusted Partnerships.</p>
         <div class="hero-ctas">
           <a href="#contact" class="cta-btn gold">Request a Quote</a>
@@ -2625,11 +2641,11 @@
       </div>
       <div class="hero-art reveal-left" aria-hidden="true"
         style="display: flex; align-items: center; justify-content: center; position: relative;">
-        <img src="logo.png" alt="Sri Kumaran Enterprises"
-          style="max-width: 75%; max-height: 75%; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(14,42,31,0.5));">
+        <img src="logo-all-products.png" alt="Sri Kumaran Enterprises"
+          style="max-width: 75%; max-height: 75%; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(14,42,31,0.5)); background: transparent; border-radius: 50%;">
 
-        <div class="floating-tag tag-1">Direct Farmer Network</div>
-        <div class="floating-tag tag-2">Certified Quality Rice</div>
+        <div class="floating-tag tag-1" id="heroTag1">Direct Farmer Network</div>
+        <div class="floating-tag tag-2" id="heroTag2">Certified Quality Rice</div>
         <div class="floating-tag tag-3">Global Export Capability</div>
       </div>
     </div>
@@ -3283,6 +3299,7 @@
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
             <span class="why-number-badge">10</span>
+          </div>
           <h4>Long-Term Partnerships</h4>
           <p>Building long-lasting B2B relationships focused on shared commercial growth.</p>
         </div>
@@ -3896,6 +3913,9 @@
       const heroStatNum = document.getElementById('heroStatNum');
       const heroStatLabel = document.getElementById('heroStatLabel');
       const heroExploreBtn = document.getElementById('heroExploreBtn');
+      const heroTitle = document.getElementById('heroTitle');
+      const heroLead = document.getElementById('heroLead');
+      const heroTag2 = document.getElementById('heroTag2');
 
       if (heroVid && heroVidNext) {
         const players = [heroVid, heroVidNext];
@@ -3912,7 +3932,10 @@
             label: 'Rice varieties exported',
             years: 'Years in rice distribution',
             cta: 'Explore Rice Range',
-            href: '#products?line=rice'
+            href: '#products?line=rice',
+            title: 'Excellence in every grain,<br><em>connecting global markets.</em>',
+            lead: 'Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice Through Quality, Integrity, and Trusted Partnerships.',
+            tag: 'Certified Quality Rice'
           },
           {
             srcs: [
@@ -3925,7 +3948,10 @@
             label: 'Coconut products exported',
             years: 'Years in coconut distribution',
             cta: 'Explore Coconut Range',
-            href: '#products?line=coconut'
+            href: '#products?line=coconut',
+            title: 'Excellence in every coconut,<br><em>connecting global markets.</em>',
+            lead: 'Connecting Global Markets with Premium Coconut Products Through Quality, Integrity, and Trusted Partnerships.',
+            tag: 'Certified Coconut Products'
           },
           {
             srcs: [
@@ -3938,7 +3964,10 @@
             label: 'Fresh fruits exported',
             years: 'Years in fruit distribution',
             cta: 'Explore Fresh Fruits',
-            href: '#products?line=fruits'
+            href: '#products?line=fruits',
+            title: 'Excellence in every harvest,<br><em>connecting global markets.</em>',
+            lead: 'Connecting Global Markets with Fresh Indian Fruits Through Quality, Integrity, and Trusted Partnerships.',
+            tag: 'Certified Fresh Fruits'
           },
           {
             srcs: [
@@ -3951,7 +3980,10 @@
             label: 'Fresh vegetables exported',
             years: 'Years in vegetable distribution',
             cta: 'Explore Fresh Vegetables',
-            href: '#products?line=vegetables'
+            href: '#products?line=vegetables',
+            title: 'Excellence in every harvest,<br><em>connecting global markets.</em>',
+            lead: 'Connecting Global Markets with Fresh Indian Vegetables Through Quality, Integrity, and Trusted Partnerships.',
+            tag: 'Certified Fresh Vegetables'
           }
         ];
 
@@ -3963,12 +3995,16 @@
         const FADE_MS = 1150;
 
         const updateHeroCopy = (scene) => {
-          const fadeEls = [heroYearsLabel, heroStatNum, heroStatLabel].filter(Boolean);
+          const fadeEls = [heroYearsLabel, heroStatNum, heroStatLabel, heroTitle, heroLead, heroTag2].filter(Boolean);
           fadeEls.forEach(el => el.classList.add('is-fading'));
+
           setTimeout(() => {
             if (heroYearsLabel) heroYearsLabel.textContent = scene.years;
             if (heroStatNum) heroStatNum.textContent = scene.num;
             if (heroStatLabel) heroStatLabel.textContent = scene.label;
+            if (heroTitle) heroTitle.innerHTML = scene.title;
+            if (heroLead) heroLead.textContent = scene.lead;
+            if (heroTag2) heroTag2.textContent = scene.tag;
             fadeEls.forEach(el => el.classList.remove('is-fading'));
           }, 280);
 
