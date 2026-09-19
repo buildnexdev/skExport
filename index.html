@@ -830,7 +830,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
-      align-items: center;
+      align-items: stretch;
     }
 
     @media(max-width:920px) {
@@ -838,18 +838,36 @@
         grid-template-columns: 1fr;
         gap: 40px;
       }
+
+      .about-mosaic {
+        min-height: 480px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
     }
 
     .about-img-col {
       position: relative;
+      height: 100%;
     }
 
-    .about-img-col img {
+    .about-mosaic {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1.15fr 1fr;
+      gap: 14px;
+      height: 100%;
+      min-height: 720px;
+    }
+
+    .about-mosaic img {
       width: 100%;
-      border-radius: 20px;
+      height: 100%;
       object-fit: cover;
-      height: 520px;
-      box-shadow: 0 30px 80px rgba(14, 42, 31, 0.15);
+      object-position: center;
+      border-radius: 18px;
+      min-height: 0;
+      box-shadow: 0 16px 40px rgba(14, 42, 31, 0.12);
     }
 
     .about-img-badge {
@@ -1507,7 +1525,7 @@
 
     .vmv-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 28px;
     }
 
@@ -1643,27 +1661,36 @@
     .values-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 14px;
+      gap: 18px;
+      margin-top: 36px;
     }
 
-    .value-pill {
+    @media(max-width:768px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .value-item {
       background: #FFFFFF;
-      border: 1px solid rgba(220, 212, 190, 0.8);
-      border-radius: 12px;
-      padding: 10px 12px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--forest-deep);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1.5px solid rgba(220, 212, 190, 0.8);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 8px 24px rgba(14, 42, 31, 0.04);
     }
 
-    .value-pill svg {
-      color: #27AE60;
-      flex-shrink: 0;
+    .value-item h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--forest-deep);
+      margin: 0 0 8px;
+    }
+
+    .value-item p {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
     }
 
     /* ---------- CTA band ---------- */
@@ -2675,26 +2702,29 @@
   <section class="about" id="about">
     <div class="wrap">
       <div class="about-img-col reveal-right">
-        <img src="rice1.png" alt="Sri Kumaran Enterprises - Premium Indian Rice">
+        <div class="about-mosaic">
+          <img src="about-all-products.jpg" alt="Rice, coconut, fruits and vegetables for export">
+          <img src="about-produce.jpg" alt="Fresh fruits and vegetables for export">
+        </div>
         <div class="about-img-badge">
           <div class="big-num">5+</div>
           <div class="big-label">Years of Excellence</div>
         </div>
       </div>
       <div class="about-text-col reveal-left">
-        <div class="eyebrow">Company Profile</div>
-        <h2>A Trusted Name in Premium Indian Rice Export</h2>
-        <p>Welcome to <strong>SRI KUMARAN ENTERPRISES</strong>, a trusted exporter and distributor of premium-quality
-          Indian rice. Established in 2026, we deliver superior-quality rice to domestic and international markets with
-          a commitment to quality, reliability, and customer-focused service.</p>
-        <p>Our expertise in sourcing, quality management, packaging, and export operations has enabled us to build
-          strong partnerships with importers, wholesalers, distributors, retailers, and food service partners worldwide.
-        </p>
+        <div class="eyebrow">About Us</div>
+        <h2>About Sri Kumaran Enterprises</h2>
+        <p>Established in 2026, <strong>SRI KUMARAN ENTERPRISES</strong> is an India-based agricultural export company connecting trusted Indian origins with discerning international markets.</p>
+        <p>Our strength lies in our diverse product portfolio and extensive procurement network, enabling us to source and consolidate premium rice, coconut and its by-products, fresh fruits and vegetables, and value-added agricultural products according to specific buyer requirements.</p>
+        <p>We work with a strong network of farmers, producers, processors, packers, and established supply partners, giving us the sourcing flexibility to support varied volumes, specifications, seasonal requirements, and quality parameters.</p>
+        <p>Our export operations are guided by the principles of food safety, quality assurance, traceability, responsible sourcing, regulatory compliance, and supply-chain transparency. We carefully align sourcing and quality controls with applicable international and destination-market requirements.</p>
+        <p>From procurement and quality assessment to packing, documentation, and logistics, we remain committed to delivering the right product, to the agreed specification, at the required quality and within the committed delivery schedule.</p>
+        <p>Our ambition is to become a trusted long-term sourcing partner for international importers, creating sustainable B2B relationships through consistent quality, strong sourcing capabilities, transparent communication, and dependable execution.</p>
 
         <div class="about-stats">
           <div class="about-stat-item reveal-up stagger-1">
-            <div class="num">12+</div>
-            <div class="lbl">Rice Varieties</div>
+            <div class="num">05+</div>
+            <div class="lbl">Product Lines</div>
           </div>
           <div class="about-stat-item reveal-up stagger-2">
             <div class="num">04</div>
@@ -3321,7 +3351,8 @@
             </div>
           </div>
           <h3>A trusted global partner</h3>
-          <p>To become a trusted and respected global partner in the rice export industry by delivering exceptional quality, reliability, and value to customers worldwide. We aim to set new benchmarks in responsible sourcing, operational excellence, and long-term B2B partnerships.</p>
+          <p>To become a trusted and respected global sourcing partner for high-quality rice, coconut and its by-products, fresh fruits and vegetables, and value-added agricultural products, delivering consistent quality, reliability, and value to customers worldwide.
+            We aim to set new benchmarks in food safety, quality assurance, traceability, responsible sourcing, regulatory compliance, operational excellence, and sustainable international trade, while building transparent, dependable, and long-term B2B partnerships across global markets.</p>
         </div>
 
         <!-- Mission Card -->
@@ -3333,44 +3364,46 @@
             </div>
           </div>
           <h3>Quality, at every stage</h3>
-          <p>Our mission is to deliver premium-quality rice products to global markets through responsible sourcing, strict quality standards, and reliable supply chain management. We provide consistent quality, transparent trade practices, and international food safety compliance.</p>
+          <p>To deliver exceptional agricultural products to global markets through quality, integrity, traceability, and responsible sourcing.
+            We connect trusted producers with international buyers by maintaining rigorous standards across food safety, product quality, supply-chain control, documentation, compliance, and logistics. From origin to destination, we are committed to delivering products that meet customer specifications and applicable international requirements—with consistency, transparency, and reliability in every shipment.
+            Our goal is to transform every transaction into a trusted, long-term global partnership.</p>
         </div>
+      </div>
 
-        <!-- Values Card -->
-        <div class="vmv-card values reveal-left">
-          <div class="vmv-header">
-            <span class="vmv-badge">CORE VALUES</span>
-            <div class="vmv-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-          </div>
-          <h3>Pillars of Excellence</h3>
-          <div class="values-grid">
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Quality First
-            </div>
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Integrity &amp; Trust
-            </div>
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Customer Focus
-            </div>
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Reliability
-            </div>
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Sustainability
-            </div>
-            <div class="value-pill">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
-              Excellence
-            </div>
-          </div>
+      <div class="eyebrow reveal-up" style="margin-top:56px;">What We Stand For</div>
+      <h2 class="reveal-up stagger-1" style="margin:16px 0 28px; font-size:clamp(28px,3.4vw,42px); color:var(--forest-deep);">Our Core Values</h2>
+      <div class="values-grid">
+        <div class="value-item reveal-up stagger-1">
+          <h4>Food Safety &amp; Quality</h4>
+          <p>We place food safety and consistent quality at the centre of everything we do, from responsible sourcing and processing to packing and final delivery.</p>
+        </div>
+        <div class="value-item reveal-up stagger-2">
+          <h4>Traceability &amp; Transparency</h4>
+          <p>We maintain clear and transparent supply chains, enabling reliable traceability of products from origin to destination.</p>
+        </div>
+        <div class="value-item reveal-up stagger-3">
+          <h4>Compliance &amp; Standards</h4>
+          <p>We are committed to meeting applicable international food-safety, quality, residue, contaminant, packaging, labelling, and import requirements.</p>
+        </div>
+        <div class="value-item reveal-up stagger-4">
+          <h4>Responsible &amp; Sustainable Sourcing</h4>
+          <p>We work with trusted supply partners and promote responsible sourcing practices that support sustainable agriculture and long-term value creation.</p>
+        </div>
+        <div class="value-item reveal-up stagger-1">
+          <h4>Consistency &amp; Reliability</h4>
+          <p>We deliver according to agreed specifications, quality parameters, quantities, documentation, and delivery schedules—shipment after shipment.</p>
+        </div>
+        <div class="value-item reveal-up stagger-2">
+          <h4>Integrity &amp; Accountability</h4>
+          <p>We conduct every business relationship with honesty, transparency, responsibility, and respect.</p>
+        </div>
+        <div class="value-item reveal-up stagger-3">
+          <h4>Customer Confidence</h4>
+          <p>We provide dependable products, accurate documentation, responsive communication, and professional export support to make global sourcing secure and seamless.</p>
+        </div>
+        <div class="value-item reveal-up stagger-4">
+          <h4>Continuous Improvement</h4>
+          <p>We continuously strengthen our quality systems, supplier controls, processes, and supply-chain practices to meet evolving international expectations.</p>
         </div>
       </div>
     </div>
