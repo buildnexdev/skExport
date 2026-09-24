@@ -145,6 +145,19 @@
       opacity: 0.8;
     }
 
+    .topbar a {
+      color: inherit;
+      text-decoration: none;
+      opacity: 1;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s ease, color 0.2s ease;
+    }
+
+    .topbar a:hover {
+      color: #ffffff;
+      border-bottom-color: rgba(255, 255, 255, 0.55);
+    }
+
     .topbar .tags {
       display: flex;
       gap: 18px;
@@ -823,79 +836,60 @@
     /* ---------- Company Profile (About) ---------- */
     .about {
       background: #FFFFFF;
-      overflow: hidden;
     }
 
     .about .wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: minmax(240px, 340px) 1fr;
+      gap: 64px;
       align-items: stretch;
     }
 
     @media(max-width:920px) {
       .about .wrap {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 28px;
       }
 
-      .about-mosaic {
-        min-height: 480px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+      .about-img-col {
+        min-height: 0;
+        display: flex;
+        justify-content: center;
+      }
+
+      .about-logo-medallion {
+        position: relative;
+        left: auto;
+        top: auto;
+        width: min(200px, 52vw);
+        transform: none !important;
       }
     }
 
     .about-img-col {
       position: relative;
-      height: 100%;
+      min-height: 280px;
     }
 
-    .about-mosaic {
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-template-rows: 1.15fr 1fr;
-      gap: 14px;
-      height: 100%;
-      min-height: 720px;
+    .about-logo-medallion {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      z-index: 2;
+      width: min(280px, 88%);
+      aspect-ratio: 1;
+      margin-left: calc(min(280px, 88%) / -2);
+      background: transparent;
+      will-change: transform;
     }
 
-    .about-mosaic img {
+    .about-logo-medallion img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 18px;
-      min-height: 0;
-      box-shadow: 0 16px 40px rgba(14, 42, 31, 0.12);
-    }
-
-    .about-img-badge {
-      position: absolute;
-      bottom: -20px;
-      right: -20px;
-      background: var(--forest-deep);
-      color: #FFFFFF;
-      padding: 28px 32px;
-      border-radius: 16px;
-      text-align: center;
-      box-shadow: 0 10px 30px rgba(14, 42, 31, 0.3);
-    }
-
-    .about-img-badge .big-num {
-      font-family: 'Fraunces', serif;
-      font-size: 56px;
-      font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-    }
-
-    .about-img-badge .big-label {
-      font-size: 13px;
-      color: #CBD8CB;
-      margin-top: 4px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
+      object-fit: contain;
+      border-radius: 50%;
+      display: block;
+      filter: drop-shadow(0 16px 28px rgba(14, 42, 31, 0.18));
     }
 
     .about-text-col .eyebrow {
@@ -2117,10 +2111,6 @@
         gap: 48px;
       }
 
-      .about-img-col img {
-        height: 440px;
-      }
-
       .manifest .wrap {
         padding-top: 20px;
       }
@@ -2177,25 +2167,6 @@
       .about .wrap {
         grid-template-columns: 1fr;
         gap: 36px;
-      }
-
-      .about-img-col img {
-        height: 340px;
-      }
-
-      .about-img-badge {
-        bottom: 12px;
-        right: 12px;
-        padding: 16px 20px;
-        border-radius: 12px;
-      }
-
-      .about-img-badge .big-num {
-        font-size: 40px;
-      }
-
-      .about-img-badge .big-label {
-        font-size: 11px;
       }
 
       .about-stats {
@@ -2368,10 +2339,6 @@
     @media (max-width: 360px) {
       .hero h1 {
         font-size: 28px;
-      }
-
-      .about-img-col img {
-        height: 260px;
       }
 
       .rice-card {
@@ -2589,7 +2556,7 @@
 
   <div class="topbar">
     <div class="wrap">
-      <span>Tel: +91 93442 99203 &nbsp;·&nbsp; sales@srkuexports.com</span>
+      <span>Tel: +91 93442 99203 &nbsp;·&nbsp; sales@srkuexports.com &nbsp;·&nbsp; <a href="https://srkuexports.com/" target="_blank" rel="noopener noreferrer">https://srkuexports.com/</a></span>
       <div class="tags"><span>APEDA Registered</span><span>FSSAI Certified</span><span>IEC Authorized</span></div>
     </div>
   </div>
@@ -2668,9 +2635,6 @@
       </div>
       <div class="hero-art reveal-left" aria-hidden="true"
         style="display: flex; align-items: center; justify-content: center; position: relative;">
-        <img src="logo.svg" alt="Sri Kumaran Enterprises"
-          style="max-width: 75%; max-height: 75%; object-fit: contain; position: relative; z-index: 2; filter: drop-shadow(0 20px 40px rgba(14,42,31,0.5)); background: transparent; border-radius: 50%;">
-
         <div class="floating-tag tag-1" id="heroTag1">Direct Farmer Network</div>
         <div class="floating-tag tag-2" id="heroTag2">Certified Quality Rice</div>
         <div class="floating-tag tag-3">Global Export Capability</div>
@@ -2701,14 +2665,9 @@
 
   <section class="about" id="about">
     <div class="wrap">
-      <div class="about-img-col reveal-right">
-        <div class="about-mosaic">
-          <img src="about-all-products.jpg" alt="Rice, coconut, fruits and vegetables for export">
-          <img src="about-produce.jpg" alt="Fresh fruits and vegetables for export">
-        </div>
-        <div class="about-img-badge">
-          <div class="big-num">5+</div>
-          <div class="big-label">Years of Excellence</div>
+      <div class="about-img-col">
+        <div class="about-logo-medallion" id="aboutLogo">
+          <img src="logo.svg" alt="Sri Kumaran Enterprises Logo">
         </div>
       </div>
       <div class="about-text-col reveal-left">
@@ -4086,6 +4045,61 @@
 
       window.addEventListener('hashchange', parseHashFilter);
       parseHashFilter();
+
+      const aboutSection = document.getElementById('about');
+      const aboutLogo = document.getElementById('aboutLogo');
+      const aboutLogoCol = aboutSection ? aboutSection.querySelector('.about-img-col') : null;
+      const desktopAbout = window.matchMedia('(min-width: 921px)');
+      let aboutPointerY = null;
+      let aboutLogoY = 0;
+      let aboutLogoRaf = 0;
+
+      const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+      const aboutLogoMax = () => {
+        if (!aboutLogoCol || !aboutLogo) return 0;
+        return Math.max(0, aboutLogoCol.clientHeight - aboutLogo.offsetHeight);
+      };
+
+      const desiredAboutLogoY = () => {
+        if (!aboutSection || !aboutLogoCol || !aboutLogo || !desktopAbout.matches) return 0;
+        const colRect = aboutLogoCol.getBoundingClientRect();
+        const logoH = aboutLogo.offsetHeight;
+        const pointer = aboutPointerY == null ? window.innerHeight * 0.45 : aboutPointerY;
+        return clamp(pointer - colRect.top - logoH / 2, 0, aboutLogoMax());
+      };
+
+      const tickAboutLogo = () => {
+        aboutLogoRaf = 0;
+        if (!aboutLogo || !desktopAbout.matches) {
+          if (aboutLogo) aboutLogo.style.transform = '';
+          return;
+        }
+        const target = desiredAboutLogoY();
+        aboutLogoY += (target - aboutLogoY) * 0.16;
+        if (Math.abs(target - aboutLogoY) < 0.4) aboutLogoY = target;
+        aboutLogo.style.transform = `translateY(${aboutLogoY}px)`;
+        if (aboutLogoY !== target) {
+          aboutLogoRaf = requestAnimationFrame(tickAboutLogo);
+        }
+      };
+
+      const requestAboutLogoTick = () => {
+        if (!aboutLogoRaf) aboutLogoRaf = requestAnimationFrame(tickAboutLogo);
+      };
+
+      if (aboutSection && aboutLogo && aboutLogoCol) {
+        aboutSection.addEventListener('mousemove', (event) => {
+          aboutPointerY = event.clientY;
+          requestAboutLogoTick();
+        });
+        window.addEventListener('scroll', requestAboutLogoTick, { passive: true });
+        window.addEventListener('resize', () => {
+          aboutLogoY = desiredAboutLogoY();
+          requestAboutLogoTick();
+        });
+        requestAboutLogoTick();
+      }
 
       // Carousel arrow scroll
       const prevBtn = document.getElementById('prevBtn');
