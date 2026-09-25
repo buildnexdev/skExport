@@ -111,6 +111,7 @@
 
     section {
       padding: 96px 0;
+      scroll-margin-top: 88px;
     }
 
     @media(max-width:720px) {
@@ -429,9 +430,19 @@
       background: #FFFFFF;
       border: 1px solid #DDD5C0;
       border-radius: 14px;
-      padding: 10px 0;
+      padding: 12px 0 10px;
+      margin-top: 0;
       box-shadow: 0 16px 40px rgba(14, 42, 31, 0.12);
       z-index: 40;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -16px;
+      height: 16px;
     }
 
     .nav-dropdown:hover .nav-dropdown-menu,
@@ -752,7 +763,123 @@
 
     .hero-art {
       position: relative;
-      height: 420px;
+      height: 460px;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 18px 8% 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-orbit-ring {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-orbit-ring.ring-a {
+      width: min(380px, 92%);
+      aspect-ratio: 1;
+      border: 1.5px dashed rgba(233, 204, 133, 0.45);
+      animation: orbitSpin 28s linear infinite;
+    }
+
+    .hero-orbit-ring.ring-b {
+      width: min(300px, 74%);
+      aspect-ratio: 1;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 0 40px rgba(233, 204, 133, 0.12) inset;
+      animation: orbitSpin 18s linear infinite reverse;
+    }
+
+    .hero-orbit-core {
+      width: min(220px, 54%);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      z-index: 2;
+      border: 3px solid rgba(233, 204, 133, 0.7);
+      box-shadow:
+        0 0 0 10px rgba(14, 42, 31, 0.28),
+        0 18px 40px rgba(0, 0, 0, 0.35);
+      animation: coreFloat 6s ease-in-out infinite;
+    }
+
+    .hero-orbit-core img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: coreZoom 12s ease-in-out infinite alternate;
+    }
+
+    .hero-sat {
+      position: absolute;
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 3;
+      border: 2px solid rgba(233, 204, 133, 0.75);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      animation: satFloat 5.5s ease-in-out infinite;
+    }
+
+    .hero-sat img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-sat.s1 { top: 6%; left: 18%; animation-delay: 0s; }
+    .hero-sat.s2 { top: 14%; right: 8%; animation-delay: -1.4s; }
+    .hero-sat.s3 { bottom: 18%; left: 8%; animation-delay: -2.6s; }
+    .hero-sat.s4 { bottom: 8%; right: 16%; animation-delay: -3.8s; }
+
+    @keyframes orbitSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes coreFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    @keyframes coreZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.12); }
+    }
+
+    @keyframes satFloat {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-14px) scale(1.04); }
+    }
+
+    .hero h1 em {
+      animation: goldShimmer 4s ease-in-out infinite;
+      background: linear-gradient(90deg, var(--gold-light), #fff6d4, var(--gold-light));
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes goldShimmer {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .cta-btn.gold {
+      animation: ctaGlow 2.8s ease-in-out infinite;
+    }
+
+    @keyframes ctaGlow {
+      0%, 100% { box-shadow: 0 4px 15px rgba(200, 155, 60, 0.25); }
+      50% { box-shadow: 0 8px 28px rgba(233, 204, 133, 0.55); }
     }
 
     .hero h1.is-fading,
@@ -918,9 +1045,10 @@
     }
 
     .about-stat-item {
-      background: var(--cream);
+      background: transparent;
       border-radius: 14px;
       padding: 22px 18px;
+      border: 1px solid var(--line);
       border-left: 4px solid var(--forest);
     }
 
@@ -2029,6 +2157,7 @@
       font-size: 13.5px;
       text-decoration: none;
       transition: color 0.2s;
+      cursor: pointer;
     }
 
     .foot-links a:hover {
@@ -2160,7 +2289,16 @@
       }
 
       .hero-art {
-        height: 280px;
+        height: 300px;
+      }
+
+      .hero-sat {
+        width: 56px;
+        height: 56px;
+      }
+
+      .hero-orbit-core {
+        width: min(160px, 48%);
       }
 
       /* About Section Mobile */
@@ -2434,6 +2572,33 @@
       animation-delay: -4s;
     }
 
+    .p8 {
+      width: 9px;
+      height: 9px;
+      left: 55%;
+      top: 88%;
+      animation-duration: 21s;
+      animation-delay: -7s;
+    }
+
+    .p9 {
+      width: 5px;
+      height: 5px;
+      left: 88%;
+      top: 78%;
+      animation-duration: 16s;
+      animation-delay: -3s;
+    }
+
+    .p10 {
+      width: 11px;
+      height: 11px;
+      left: 5%;
+      top: 96%;
+      animation-duration: 24s;
+      animation-delay: -9s;
+    }
+
     @keyframes floatUp {
       0% {
         transform: translateY(0) rotate(0);
@@ -2574,11 +2739,11 @@
         <div class="nav-dropdown">
           <a href="#products">PRODUCTS</a>
           <div class="nav-dropdown-menu">
-            <a href="#products?line=rice">Rice &amp; Rice Products</a>
-            <a href="#products?line=coconut">Coconut &amp; Coconut Products</a>
-            <a href="#products?line=fruits">Fresh Fruits</a>
-            <a href="#products?line=vegetables">Fresh Vegetables</a>
-            <a href="#products?line=byproducts">Fruits &amp; Vegetable By-Products</a>
+            <a href="#products" data-line="rice">Rice &amp; Rice Products</a>
+            <a href="#products" data-line="coconut">Coconut &amp; Coconut Products</a>
+            <a href="#products" data-line="fruits">Fresh Fruits</a>
+            <a href="#products" data-line="vegetables">Fresh Vegetables</a>
+            <a href="#products" data-line="byproducts">Fruits &amp; Vegetable By-Products</a>
           </div>
         </div>
         <a href="#certifications">ORGANIC</a>
@@ -2619,6 +2784,9 @@
       <div class="particle p5"></div>
       <div class="particle p6"></div>
       <div class="particle p7"></div>
+      <div class="particle p8"></div>
+      <div class="particle p9"></div>
+      <div class="particle p10"></div>
     </div>
     <div class="wrap">
       <div class="hero-copy reveal-right">
@@ -2628,13 +2796,23 @@
           Integrity, and Trusted Partnerships.</p>
         <div class="hero-ctas">
           <a href="#contact" class="cta-btn gold">Request a Quote</a>
-          <a href="#products?line=rice" class="cta-btn" id="heroExploreBtn"
+          <a href="#products" data-line="rice" class="cta-btn" id="heroExploreBtn"
             style="background:transparent; border:2px solid var(--gold-light); color:var(--gold-light) !important;">Explore
             Rice Range</a>
         </div>
       </div>
-      <div class="hero-art reveal-left" aria-hidden="true"
-        style="display: flex; align-items: center; justify-content: center; position: relative;">
+      <div class="hero-art reveal-left" aria-hidden="true">
+        <div class="hero-orbit">
+          <div class="hero-orbit-ring ring-a"></div>
+          <div class="hero-orbit-ring ring-b"></div>
+          <div class="hero-orbit-core">
+            <img src="about-all-products.jpg" alt="">
+          </div>
+          <div class="hero-sat s1"><img src="rice1.png" alt=""></div>
+          <div class="hero-sat s2"><img src="coconut-fresh.jpg" alt=""></div>
+          <div class="hero-sat s3"><img src="mango.jpg" alt=""></div>
+          <div class="hero-sat s4"><img src="vegetables.jpg" alt=""></div>
+        </div>
         <div class="floating-tag tag-1" id="heroTag1">Direct Farmer Network</div>
         <div class="floating-tag tag-2" id="heroTag2">Certified Quality Rice</div>
         <div class="floating-tag tag-3">Global Export Capability</div>
@@ -3860,11 +4038,11 @@
         <div class="foot-col">
           <h5 class="foot-title">Our Products</h5>
           <ul class="foot-links">
-            <li><a href="#products?line=rice">Rice &amp; Rice Products</a></li>
-            <li><a href="#products?line=coconut">Coconut &amp; Coconut Products</a></li>
-            <li><a href="#products?line=fruits">Fresh Fruits</a></li>
-            <li><a href="#products?line=vegetables">Fresh Vegetables</a></li>
-            <li><a href="#products?line=byproducts">Fruits &amp; Vegetable By-Products</a></li>
+            <li><a href="#products" data-line="rice">Rice &amp; Rice Products</a></li>
+            <li><a href="#products" data-line="coconut">Coconut &amp; Coconut Products</a></li>
+            <li><a href="#products" data-line="fruits">Fresh Fruits</a></li>
+            <li><a href="#products" data-line="vegetables">Fresh Vegetables</a></li>
+            <li><a href="#products" data-line="byproducts">Fruits &amp; Vegetable By-Products</a></li>
           </ul>
         </div>
       </div>
@@ -3981,6 +4159,42 @@
       links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
     }
 
+    const goToProducts = (line = 'all') => {
+      const products = document.getElementById('products');
+      const linePills = document.querySelectorAll('.product-line-pills .pill');
+      const cards = document.querySelectorAll('.rice-card');
+      const carousel = document.getElementById('riceCarousel');
+      const navLinks = document.getElementById('navLinks');
+
+      linePills.forEach(p => p.classList.toggle('active', p.getAttribute('data-line') === line));
+      cards.forEach(card => {
+        const cardLine = card.getAttribute('data-line') || '';
+        const show = line === 'all' || cardLine === line;
+        card.style.display = show ? '' : 'none';
+      });
+      if (carousel) carousel.scrollLeft = 0;
+
+      const hash = line && line !== 'all' ? `#products?line=${line}` : '#products';
+      if (window.location.hash !== hash) {
+        history.replaceState(null, '', hash);
+      }
+      if (navLinks) navLinks.classList.remove('open');
+      if (products) {
+        products.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    };
+
+    document.addEventListener('click', (event) => {
+      const link = event.target.closest('a');
+      if (!link) return;
+      const href = link.getAttribute('href') || '';
+      if (!href.startsWith('#products')) return;
+      event.preventDefault();
+      const queryPart = href.includes('?') ? href.split('?')[1] : '';
+      const line = link.getAttribute('data-line') || new URLSearchParams(queryPart).get('line') || 'all';
+      goToProducts(line);
+    });
+
     // Product Range Filter (with hash interlink support)
     document.addEventListener('DOMContentLoaded', () => {
       const linePills = document.querySelectorAll('.product-line-pills .pill');
@@ -4034,12 +4248,6 @@
       linePills.forEach(pill => {
         pill.addEventListener('click', () => {
           applyProductFilter(pill.getAttribute('data-line'));
-        });
-      });
-
-      document.querySelectorAll('a[href^="#products"]').forEach(link => {
-        link.addEventListener('click', () => {
-          setTimeout(parseHashFilter, 0);
         });
       });
 
@@ -4221,7 +4429,8 @@
 
           if (heroExploreBtn) {
             heroExploreBtn.textContent = scene.cta;
-            heroExploreBtn.setAttribute('href', scene.href);
+            heroExploreBtn.setAttribute('href', '#products');
+            heroExploreBtn.setAttribute('data-line', scene.href.split('line=')[1] || 'all');
           }
         };
 
