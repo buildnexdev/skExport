@@ -246,18 +246,37 @@
     }
 
     @keyframes spinClockwise {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes spinCounterClockwise {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(-360deg); }
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
     }
 
     @keyframes pulseGlow {
-      0% { transform: scale(0.9); opacity: 0.7; filter: drop-shadow(0 0 4px var(--gold)); }
-      100% { transform: scale(1.1); opacity: 1; filter: drop-shadow(0 0 12px var(--gold-light)); }
+      0% {
+        transform: scale(0.9);
+        opacity: 0.7;
+        filter: drop-shadow(0 0 4px var(--gold));
+      }
+
+      100% {
+        transform: scale(1.1);
+        opacity: 1;
+        filter: drop-shadow(0 0 12px var(--gold-light));
+      }
     }
 
     .preloader-text-group {
@@ -331,11 +350,25 @@
       transform: translate3d(0, 0, 0) scale(1) !important;
     }
 
-    .stagger-1 { transition-delay: 0.08s; }
-    .stagger-2 { transition-delay: 0.16s; }
-    .stagger-3 { transition-delay: 0.24s; }
-    .stagger-4 { transition-delay: 0.32s; }
-    .stagger-5 { transition-delay: 0.40s; }
+    .stagger-1 {
+      transition-delay: 0.08s;
+    }
+
+    .stagger-2 {
+      transition-delay: 0.16s;
+    }
+
+    .stagger-3 {
+      transition-delay: 0.24s;
+    }
+
+    .stagger-4 {
+      transition-delay: 0.32s;
+    }
+
+    .stagger-5 {
+      transition-delay: 0.40s;
+    }
 
     /* ---------- Header ---------- */
     header {
@@ -416,7 +449,7 @@
       position: relative;
     }
 
-    .nav-dropdown > a {
+    .nav-dropdown>a {
       gap: 5px;
     }
 
@@ -603,6 +636,7 @@
       from {
         transform: translate(-50%, -50%) scale(1.08);
       }
+
       to {
         transform: translate(-50%, -50%) scale(1.16);
       }
@@ -613,7 +647,7 @@
       position: absolute;
       inset: 0;
       z-index: 2;
-      background: 
+      background:
         radial-gradient(ellipse at center, transparent 30%, rgba(8, 26, 19, 0.75) 100%),
         linear-gradient(90deg, rgba(14, 42, 31, 0.88) 0%, rgba(14, 42, 31, 0.72) 55%, rgba(10, 30, 22, 0.62) 100%);
       pointer-events: none;
@@ -834,29 +868,72 @@
       object-fit: cover;
     }
 
-    .hero-sat.s1 { top: 6%; left: 18%; animation-delay: 0s; }
-    .hero-sat.s2 { top: 14%; right: 8%; animation-delay: -1.4s; }
-    .hero-sat.s3 { bottom: 18%; left: 8%; animation-delay: -2.6s; }
-    .hero-sat.s4 { bottom: 8%; right: 16%; animation-delay: -3.8s; }
+    .hero-sat.s1 {
+      top: 6%;
+      left: 18%;
+      animation-delay: 0s;
+    }
+
+    .hero-sat.s2 {
+      top: 14%;
+      right: 8%;
+      animation-delay: -1.4s;
+    }
+
+    .hero-sat.s3 {
+      bottom: 18%;
+      left: 8%;
+      animation-delay: -2.6s;
+    }
+
+    .hero-sat.s4 {
+      bottom: 8%;
+      right: 16%;
+      animation-delay: -3.8s;
+    }
 
     @keyframes orbitSpin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     @keyframes coreFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
     }
 
     @keyframes coreZoom {
-      from { transform: scale(1); }
-      to { transform: scale(1.12); }
+      from {
+        transform: scale(1);
+      }
+
+      to {
+        transform: scale(1.12);
+      }
     }
 
     @keyframes satFloat {
-      0%, 100% { transform: translateY(0) scale(1); }
-      50% { transform: translateY(-14px) scale(1.04); }
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1);
+      }
+
+      50% {
+        transform: translateY(-14px) scale(1.04);
+      }
     }
 
     .hero h1 em {
@@ -869,8 +946,15 @@
     }
 
     @keyframes goldShimmer {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
     }
 
     .cta-btn.gold {
@@ -878,8 +962,15 @@
     }
 
     @keyframes ctaGlow {
-      0%, 100% { box-shadow: 0 4px 15px rgba(200, 155, 60, 0.25); }
-      50% { box-shadow: 0 8px 28px rgba(233, 204, 133, 0.55); }
+
+      0%,
+      100% {
+        box-shadow: 0 4px 15px rgba(200, 155, 60, 0.25);
+      }
+
+      50% {
+        box-shadow: 0 8px 28px rgba(233, 204, 133, 0.55);
+      }
     }
 
     .hero h1.is-fading,
@@ -2696,7 +2787,7 @@
   <div class="page-preloader" id="pagePreloader">
     <div class="preloader-card">
       <img src="logo.svg" alt="Sri Kumaran Enterprises" class="preloader-brand-logo">
-      
+
       <!-- Multi-ring Orbital Rice Spinner -->
       <div class="orbital-spinner">
         <div class="orbit-ring ring-outer"></div>
@@ -2721,7 +2812,8 @@
 
   <div class="topbar">
     <div class="wrap">
-      <span>Tel: +91 93442 99203 &nbsp;·&nbsp; sales@srkuexports.com &nbsp;·&nbsp; <a href="https://srkuexports.com/" target="_blank" rel="noopener noreferrer">https://srkuexports.com/</a></span>
+      <span>Tel: +91 93442 99203 &nbsp;·&nbsp; sales@srkuexports.com &nbsp;·&nbsp; <a href="https://srkuexports.com/"
+          target="_blank" rel="noopener noreferrer">https://srkuexports.com/</a></span>
       <div class="tags"><span>APEDA Registered</span><span>FSSAI Certified</span><span>IEC Authorized</span></div>
     </div>
   </div>
@@ -2792,7 +2884,8 @@
       <div class="hero-copy reveal-right">
         <div class="eyebrow">Tamil Nadu, India</div>
         <h1 id="heroTitle">Excellence in every grain,<br><em>connecting global markets.</em></h1>
-        <p class="lead" id="heroLead">Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice Through Quality,
+        <p class="lead" id="heroLead">Excellence in Every Grain, Connecting Global Markets with Premium Indian Rice
+          Through Quality,
           Integrity, and Trusted Partnerships.</p>
         <div class="hero-ctas">
           <a href="#contact" class="cta-btn gold">Request a Quote</a>
@@ -2851,12 +2944,23 @@
       <div class="about-text-col reveal-left">
         <div class="eyebrow">About Us</div>
         <h2>About Sri Kumaran Enterprises</h2>
-        <p>Established in 2026, <strong>SRI KUMARAN ENTERPRISES</strong> is an India-based agricultural export company connecting trusted Indian origins with discerning international markets.</p>
-        <p>Our strength lies in our diverse product portfolio and extensive procurement network, enabling us to source and consolidate premium rice, coconut and its by-products, fresh fruits and vegetables, and value-added agricultural products according to specific buyer requirements.</p>
-        <p>We work with a strong network of farmers, producers, processors, packers, and established supply partners, giving us the sourcing flexibility to support varied volumes, specifications, seasonal requirements, and quality parameters.</p>
-        <p>Our export operations are guided by the principles of food safety, quality assurance, traceability, responsible sourcing, regulatory compliance, and supply-chain transparency. We carefully align sourcing and quality controls with applicable international and destination-market requirements.</p>
-        <p>From procurement and quality assessment to packing, documentation, and logistics, we remain committed to delivering the right product, to the agreed specification, at the required quality and within the committed delivery schedule.</p>
-        <p>Our ambition is to become a trusted long-term sourcing partner for international importers, creating sustainable B2B relationships through consistent quality, strong sourcing capabilities, transparent communication, and dependable execution.</p>
+        <p>Established in 2026, <strong>SRI KUMARAN ENTERPRISES</strong> is an India-based agricultural export company
+          connecting trusted Indian origins with discerning international markets.</p>
+        <p>Our strength lies in our diverse product portfolio and extensive procurement network, enabling us to source
+          and consolidate premium rice, coconut and its by-products, fresh fruits and vegetables, and value-added
+          agricultural products according to specific buyer requirements.</p>
+        <p>We work with a strong network of farmers, producers, processors, packers, and established supply partners,
+          giving us the sourcing flexibility to support varied volumes, specifications, seasonal requirements, and
+          quality parameters.</p>
+        <p>Our export operations are guided by the principles of food safety, quality assurance, traceability,
+          responsible sourcing, regulatory compliance, and supply-chain transparency. We carefully align sourcing and
+          quality controls with applicable international and destination-market requirements.</p>
+        <p>From procurement and quality assessment to packing, documentation, and logistics, we remain committed to
+          delivering the right product, to the agreed specification, at the required quality and within the committed
+          delivery schedule.</p>
+        <p>Our ambition is to become a trusted long-term sourcing partner for international importers, creating
+          sustainable B2B relationships through consistent quality, strong sourcing capabilities, transparent
+          communication, and dependable execution.</p>
 
         <div class="about-stats">
           <div class="about-stat-item reveal-up stagger-1">
@@ -3149,7 +3253,8 @@
               </div>
               <div class="rice-info">
                 <h3>Drumstick</h3>
-                <p>Fresh moringa (drumstick) pods, a South Indian specialty vegetable for culinary and health markets.</p>
+                <p>Fresh moringa (drumstick) pods, a South Indian specialty vegetable for culinary and health markets.
+                </p>
                 <span class="grade-tag">Fresh</span>
                 <a href="#contact" class="know-more">Know More →</a>
               </div>
@@ -3256,7 +3361,8 @@
     <div class="wrap">
       <div class="eyebrow reveal-up">Compliance</div>
       <h2 class="reveal-up stagger-1">Certified for global trade</h2>
-      <p class="sub reveal-up stagger-2">Our operations comply with the industry standards and export regulations required to move rice
+      <p class="sub reveal-up stagger-2">Our operations comply with the industry standards and export regulations
+        required to move rice
         safely and legally across borders.</p>
       <div class="stamp-grid">
         <!-- APEDA Card -->
@@ -3264,7 +3370,9 @@
           <div class="cert-card-header">
             <span class="cert-badge-tag gold">AGRI EXPORT</span>
             <span class="verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Verified
             </span>
           </div>
@@ -3285,7 +3393,9 @@
           <div class="cert-card-header">
             <span class="cert-badge-tag green">FOOD SAFETY</span>
             <span class="verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Verified
             </span>
           </div>
@@ -3306,7 +3416,9 @@
           <div class="cert-card-header">
             <span class="cert-badge-tag gold">GOVT ENTERPRISE</span>
             <span class="verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Verified
             </span>
           </div>
@@ -3327,7 +3439,9 @@
           <div class="cert-card-header">
             <span class="cert-badge-tag blue">GLOBAL TRADE</span>
             <span class="verified-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               Verified
             </span>
           </div>
@@ -3355,7 +3469,10 @@
         <div class="why-card reveal-up stagger-1">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-2 5 3-1.5L16 20l-2-5"/><circle cx="12" cy="9" r="6"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 15l-2 5 3-1.5L16 20l-2-5" />
+                <circle cx="12" cy="9" r="6" />
+              </svg>
             </div>
             <span class="why-number-badge">01</span>
           </div>
@@ -3367,7 +3484,9 @@
         <div class="why-card reveal-up stagger-2">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M12 2c-3 4-3 10 0 14M12 2c3 4 3 10 0 14"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 2v20M12 2c-3 4-3 10 0 14M12 2c3 4 3 10 0 14" />
+              </svg>
             </div>
             <span class="why-number-badge">02</span>
           </div>
@@ -3379,7 +3498,11 @@
         <div class="why-card reveal-up stagger-3">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <path
+                  d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
             </div>
             <span class="why-number-badge">03</span>
           </div>
@@ -3391,7 +3514,12 @@
         <div class="why-card reveal-up stagger-4">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
             <span class="why-number-badge">04</span>
           </div>
@@ -3403,7 +3531,10 @@
         <div class="why-card reveal-up stagger-1">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <polyline points="9 12 11 14 15 10" />
+              </svg>
             </div>
             <span class="why-number-badge">05</span>
           </div>
@@ -3415,7 +3546,10 @@
         <div class="why-card reveal-up stagger-2">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
             </div>
             <span class="why-number-badge">06</span>
           </div>
@@ -3427,7 +3561,10 @@
         <div class="why-card reveal-up stagger-3">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              </svg>
             </div>
             <span class="why-number-badge">07</span>
           </div>
@@ -3439,7 +3576,12 @@
         <div class="why-card reveal-up stagger-4">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="1" y="3" width="15" height="13" />
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                <circle cx="5.5" cy="18.5" r="2.5" />
+                <circle cx="18.5" cy="18.5" r="2.5" />
+              </svg>
             </div>
             <span class="why-number-badge">08</span>
           </div>
@@ -3451,7 +3593,10 @@
         <div class="why-card reveal-up stagger-1">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
             </div>
             <span class="why-number-badge">09</span>
           </div>
@@ -3463,7 +3608,12 @@
         <div class="why-card reveal-up stagger-2">
           <div class="why-card-top">
             <div class="why-icon-box">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
             <span class="why-number-badge">10</span>
           </div>
@@ -3477,19 +3627,28 @@
   <section class="vmv">
     <div class="wrap">
       <div class="eyebrow reveal-up">What Drives Us</div>
-      <h2 class="reveal-up stagger-1" style="margin:16px 0 44px; font-size:clamp(28px,3.4vw,42px); color:var(--forest-deep);">Vision, mission &amp; values</h2>
+      <h2 class="reveal-up stagger-1"
+        style="margin:16px 0 44px; font-size:clamp(28px,3.4vw,42px); color:var(--forest-deep);">Vision, mission &amp;
+        values</h2>
       <div class="vmv-grid">
         <!-- Vision Card -->
         <div class="vmv-card vision reveal-right">
           <div class="vmv-header">
             <span class="vmv-badge">OUR VISION</span>
             <div class="vmv-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
+              </svg>
             </div>
           </div>
           <h3>A trusted global partner</h3>
-          <p>To become a trusted and respected global sourcing partner for high-quality rice, coconut and its by-products, fresh fruits and vegetables, and value-added agricultural products, delivering consistent quality, reliability, and value to customers worldwide.
-            We aim to set new benchmarks in food safety, quality assurance, traceability, responsible sourcing, regulatory compliance, operational excellence, and sustainable international trade, while building transparent, dependable, and long-term B2B partnerships across global markets.</p>
+          <p>To become a trusted and respected global sourcing partner for high-quality rice, coconut and its
+            by-products, fresh fruits and vegetables, and value-added agricultural products, delivering consistent
+            quality, reliability, and value to customers worldwide.
+            We aim to set new benchmarks in food safety, quality assurance, traceability, responsible sourcing,
+            regulatory compliance, operational excellence, and sustainable international trade, while building
+            transparent, dependable, and long-term B2B partnerships across global markets.</p>
         </div>
 
         <!-- Mission Card -->
@@ -3497,38 +3656,52 @@
           <div class="vmv-header">
             <span class="vmv-badge">OUR MISSION</span>
             <div class="vmv-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" />
+                <circle cx="12" cy="12" r="6" />
+                <circle cx="12" cy="12" r="2" />
+              </svg>
             </div>
           </div>
           <h3>Quality, at every stage</h3>
-          <p>To deliver exceptional agricultural products to global markets through quality, integrity, traceability, and responsible sourcing.
-            We connect trusted producers with international buyers by maintaining rigorous standards across food safety, product quality, supply-chain control, documentation, compliance, and logistics. From origin to destination, we are committed to delivering products that meet customer specifications and applicable international requirements—with consistency, transparency, and reliability in every shipment.
+          <p>To deliver exceptional agricultural products to global markets through quality, integrity, traceability,
+            and responsible sourcing.
+            We connect trusted producers with international buyers by maintaining rigorous standards across food safety,
+            product quality, supply-chain control, documentation, compliance, and logistics. From origin to destination,
+            we are committed to delivering products that meet customer specifications and applicable international
+            requirements—with consistency, transparency, and reliability in every shipment.
             Our goal is to transform every transaction into a trusted, long-term global partnership.</p>
         </div>
       </div>
 
       <div class="eyebrow reveal-up" style="margin-top:56px;">What We Stand For</div>
-      <h2 class="reveal-up stagger-1" style="margin:16px 0 28px; font-size:clamp(28px,3.4vw,42px); color:var(--forest-deep);">Our Core Values</h2>
+      <h2 class="reveal-up stagger-1"
+        style="margin:16px 0 28px; font-size:clamp(28px,3.4vw,42px); color:var(--forest-deep);">Our Core Values</h2>
       <div class="values-grid">
         <div class="value-item reveal-up stagger-1">
           <h4>Food Safety &amp; Quality</h4>
-          <p>We place food safety and consistent quality at the centre of everything we do, from responsible sourcing and processing to packing and final delivery.</p>
+          <p>We place food safety and consistent quality at the centre of everything we do, from responsible sourcing
+            and processing to packing and final delivery.</p>
         </div>
         <div class="value-item reveal-up stagger-2">
           <h4>Traceability &amp; Transparency</h4>
-          <p>We maintain clear and transparent supply chains, enabling reliable traceability of products from origin to destination.</p>
+          <p>We maintain clear and transparent supply chains, enabling reliable traceability of products from origin to
+            destination.</p>
         </div>
         <div class="value-item reveal-up stagger-3">
           <h4>Compliance &amp; Standards</h4>
-          <p>We are committed to meeting applicable international food-safety, quality, residue, contaminant, packaging, labelling, and import requirements.</p>
+          <p>We are committed to meeting applicable international food-safety, quality, residue, contaminant, packaging,
+            labelling, and import requirements.</p>
         </div>
         <div class="value-item reveal-up stagger-4">
           <h4>Responsible &amp; Sustainable Sourcing</h4>
-          <p>We work with trusted supply partners and promote responsible sourcing practices that support sustainable agriculture and long-term value creation.</p>
+          <p>We work with trusted supply partners and promote responsible sourcing practices that support sustainable
+            agriculture and long-term value creation.</p>
         </div>
         <div class="value-item reveal-up stagger-1">
           <h4>Consistency &amp; Reliability</h4>
-          <p>We deliver according to agreed specifications, quality parameters, quantities, documentation, and delivery schedules—shipment after shipment.</p>
+          <p>We deliver according to agreed specifications, quality parameters, quantities, documentation, and delivery
+            schedules—shipment after shipment.</p>
         </div>
         <div class="value-item reveal-up stagger-2">
           <h4>Integrity &amp; Accountability</h4>
@@ -3536,11 +3709,13 @@
         </div>
         <div class="value-item reveal-up stagger-3">
           <h4>Customer Confidence</h4>
-          <p>We provide dependable products, accurate documentation, responsive communication, and professional export support to make global sourcing secure and seamless.</p>
+          <p>We provide dependable products, accurate documentation, responsive communication, and professional export
+            support to make global sourcing secure and seamless.</p>
         </div>
         <div class="value-item reveal-up stagger-4">
           <h4>Continuous Improvement</h4>
-          <p>We continuously strengthen our quality systems, supplier controls, processes, and supply-chain practices to meet evolving international expectations.</p>
+          <p>We continuously strengthen our quality systems, supplier controls, processes, and supply-chain practices to
+            meet evolving international expectations.</p>
         </div>
       </div>
     </div>
@@ -3549,8 +3724,9 @@
   <section class="cta-band reveal-scale">
     <div class="wrap">
       <div class="eyebrow" style="justify-content:center; color:var(--gold-light);">Get In Touch</div>
-      <h2>Ready to source premium Indian rice for your market?</h2>
-      <p>Tell us your required variety, grade and volume — our team will respond with pricing and shipment options.</p>
+      <h2>Bringing the Best of India to Global Markets.</h2>
+      <p>Premium Indian rice, coconut products, fresh fruits, vegetables, and processed food products — sourced with
+        care and delivered worldwide.</p>
       <div class="hero-ctas"><a href="#contact" class="cta-btn gold">Request a Quote</a></div>
     </div>
   </section>
@@ -3560,13 +3736,17 @@
       <!-- Contact Info Hub Card -->
       <div class="contact-hub-card reveal-right">
         <span class="vmv-badge" style="background:rgba(200,155,60,0.2); color:var(--gold-light);">DIRECT INQUIRY</span>
-        <h2>Let's talk rice.</h2>
-        <p class="lead">Reach out for pricing, sample requests, or to discuss a long-term commercial supply partnership.</p>
-        
+        <h2>Looking for Quality Indian Products?</h2>
+        <p class="lead">Reach out for pricing, sample requests, or to discuss a long-term commercial supply partnership.
+        </p>
+
         <div class="contact-info-list">
           <a href="mailto:sales@srkuexports.com" class="contact-info-item">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
             </div>
             <div class="contact-info-text">
               <span class="contact-info-label">Direct Email</span>
@@ -3576,7 +3756,10 @@
 
           <a href="tel:+919344299203" class="contact-info-item">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
             </div>
             <div class="contact-info-text">
               <span class="contact-info-label">Phone &amp; WhatsApp</span>
@@ -3586,7 +3769,10 @@
 
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
             </div>
             <div class="contact-info-text">
               <span class="contact-info-label">Headquarters</span>
@@ -3596,7 +3782,9 @@
 
           <div class="contact-info-item">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
             </div>
             <div class="contact-info-text">
               <span class="contact-info-label">Accreditations</span>
@@ -3604,9 +3792,14 @@
             </div>
           </div>
 
-          <a href="https://www.instagram.com/srikumaran_enterprises?igsh=MXZ5N3diMzYxNXc2aA%3D%3D&utm_source=qr" target="_blank" class="contact-info-item">
+          <a href="https://www.instagram.com/srikumaran_enterprises?igsh=MXZ5N3diMzYxNXc2aA%3D%3D&utm_source=qr"
+            target="_blank" class="contact-info-item">
             <div class="contact-info-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
             </div>
             <div class="contact-info-text">
               <span class="contact-info-label">Official Instagram</span>
@@ -3621,15 +3814,20 @@
         <h3>Request Export Pricing &amp; Samples</h3>
         <form onsubmit="handleContactSubmit(event, this)">
           <div class="row2">
-            <div class="field"><label for="fname">First name</label><input id="fname" type="text" placeholder="John" required></div>
-            <div class="field"><label for="lname">Last name</label><input id="lname" type="text" placeholder="Doe" required></div>
+            <div class="field"><label for="fname">First name</label><input id="fname" type="text" placeholder="John"
+                required></div>
+            <div class="field"><label for="lname">Last name</label><input id="lname" type="text" placeholder="Doe"
+                required></div>
           </div>
           <div class="row2">
-            <div class="field"><label for="phone">Contact number</label><input id="phone" type="tel" placeholder="+1 (555) 000-0000" required></div>
-            <div class="field"><label for="email">Email address</label><input id="email" type="email" placeholder="john@company.com" required></div>
+            <div class="field"><label for="phone">Contact number</label><input id="phone" type="tel"
+                placeholder="+1 (555) 000-0000" required></div>
+            <div class="field"><label for="email">Email address</label><input id="email" type="email"
+                placeholder="john@company.com" required></div>
           </div>
           <div class="row2">
-            <div class="field"><label for="company">Company Name</label><input id="company" type="text" placeholder="Global Trade Co."></div>
+            <div class="field"><label for="company">Company Name</label><input id="company" type="text"
+                placeholder="Global Trade Co."></div>
             <div class="field">
               <label for="country">Country</label>
               <select id="country" required>
@@ -3839,9 +4037,12 @@
               <option>Other / Custom Order</option>
             </select>
           </div>
-          <div class="field"><label for="message">Specific requirements / Message</label><textarea id="message" rows="4" placeholder="Detail your required metric tonnage, grade, or packaging requirements..."></textarea></div>
+          <div class="field"><label for="message">Specific requirements / Message</label><textarea id="message" rows="4"
+              placeholder="Detail your required metric tonnage, grade, or packaging requirements..."></textarea></div>
           <button type="submit" class="submit-btn-gold">Send Export Enquiry →</button>
-          <div id="form-msg" style="display: none; margin-top: 15px; font-size: 14.5px; font-weight: 500; border-radius: 12px; padding: 12px 16px;"></div>
+          <div id="form-msg"
+            style="display: none; margin-top: 15px; font-size: 14.5px; font-weight: 500; border-radius: 12px; padding: 12px 16px;">
+          </div>
         </form>
       </div>
 
@@ -4468,7 +4669,7 @@
           if (!fade) {
             currentScene = sceneIndex;
             updateHeroCopy(scene);
-            heroVid.play().catch(() => {});
+            heroVid.play().catch(() => { });
             return;
           }
 
@@ -4505,7 +4706,7 @@
         };
 
         const playVid = () => {
-          players[activePlayer].play().catch(() => {});
+          players[activePlayer].play().catch(() => { });
         };
 
         playScene(0, { fade: false });
